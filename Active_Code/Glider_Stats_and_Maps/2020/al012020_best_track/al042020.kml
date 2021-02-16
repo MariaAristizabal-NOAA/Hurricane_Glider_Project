@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+	<kml xmlns="http://earth.google.com/kml/2.2"> 
+	<Document> 
+	<name>AL042020 </name> 
+	<open>0</open> 
+	<description>
+		<![CDATA[<TABLE>
+		<TR><TD><B>Title:</B> Tropical Cyclone Best Track for AL042020</TD></TR>
+		<TR><TD><B>Description:</B> The best track is a subjectively-smoothed representation of the tropical cyclone's location and intensity at 6-h interval over its lifetime.  These best track positions and intensity (maximum 1-minute sustained surface wind speed and minimum sea-level pressure) are based on a post-storm assessment of all available data and may differ from values contained in real-time storm advisories.  In general, they will not reflect the erratic motion implied by connecting the individual center fix positions.  The best track is a living database which servers as the official U.S. National Weather Service historical record of the tropical cyclone. 
+		<TR><TD><B>Date Created:</B> 23-09-2020</TD></TR>
+		<TR><TD><B>Created:</B>  </TD></TR>
+		<TR><TD><B>Disclaimer:</B> These data are intended for geographic display and analysis at the national level, and for large regional areas. No responsibilty is assumed by the National Oceanic and Atmospheric Administration or the National Hurricane Center in the use of these data.  No wawrranty, expressed or implied, is made by the National Hurricane Center regarding the utility of the data on any other system, nor shall the act of distrubtion constitute any such warranty. </TD></TR>
+		<TR><TD><B>For More Information: </B><a href=""></a></TD></TR></TABLE>]]>
+	</description>
+	<Schema parent="Placemark" name="AL042020"> 
+		<SimpleField type="wstring" name="StormName"></SimpleField> 
+		<SimpleField type="wstring" name="StormNumber"></SimpleField> 
+		<SimpleField type="wstring" name="StormType"></SimpleField> 
+		<SimpleField type="wstring" name="Basin"></SimpleField> 
+		<SimpleField type="wstring" name="lat"></SimpleField> 
+		<SimpleField type="wstring" name="lon"></SimpleField> 
+		<SimpleField type="wstring" name="Intensity"></SimpleField> 
+		<SimpleField type="wstring" name="MSLP"></SimpleField> 
+		<SimpleField type="wstring" name="DTG"></SimpleField> 
+	</Schema>
+	<Style id="pt"> 
+		<IconStyle> 
+			<scale>1.0</scale> 
+			<Icon> 
+				<href>ex_nhemi.png</href> 
+			</Icon> 
+             <hotSpot x="15" y="17" xunits="pixels" yunits="pixels"/>
+		</IconStyle> 
+		<LabelStyle> 
+			<scale>1.0</scale> 
+		</LabelStyle> 
+	</Style>
+	<Style id="cat5"> 
+		<IconStyle> 
+			<scale>1.0</scale> 
+			<Icon> 
+				<href>cat5_nhemi.png</href> 
+			</Icon> 
+             <hotSpot x="15" y="17" xunits="pixels" yunits="pixels"/>
+		</IconStyle> 
+		<LabelStyle> 
+			<scale>1.0</scale> 
+		</LabelStyle> 
+	</Style>
+	<Style id="db"> 
+		<IconStyle> 
+			<scale>1.0</scale> 
+			<Icon> 
+				<href>ex_nhemi.png</href> 
+			</Icon> 
+             <hotSpot x="15" y="17" xunits="pixels" yunits="pixels"/>
+		</IconStyle> 
+		<LabelStyle> 
+			<scale>1.0</scale> 
+		</LabelStyle> 
+	</Style>
+	<Style id="cat3"> 
+		<IconStyle> 
+			<scale>1.0</scale> 
+			<Icon> 
+				<href>cat3_nhemi.png</href> 
+			</Icon> 
+             <hotSpot x="15" y="17" xunits="pixels" yunits="pixels"/>
+		</IconStyle> 
+		<LabelStyle> 
+			<scale>1.0</scale> 
+		</LabelStyle> 
+	</Style>
+	<Style id="ss"> 
+		<IconStyle> 
+			<scale>1.0</scale> 
+			<Icon> 
+				<href>ts_nhemi.png</href> 
+			</Icon> 
+             <hotSpot x="15" y="17" xunits="pixels" yunits="pixels"/>
+		</IconStyle> 
+		<LabelStyle> 
+			<scale>1.0</scale> 
+		</LabelStyle> 
+	</Style>
+	<Style id="lo"> 
+		<IconStyle> 
+			<scale>1.0</scale> 
+			<Icon> 
+				<href>ex_nhemi.png</href> 
+			</Icon> 
+             <hotSpot x="15" y="17" xunits="pixels" yunits="pixels"/>
+		</IconStyle> 
+		<LabelStyle> 
+			<scale>1.0</scale> 
+		</LabelStyle> 
+	</Style>
+	<Style id="cat4"> 
+		<IconStyle> 
+			<scale>1.0</scale> 
+			<Icon> 
+				<href>cat4_nhemi.png</href> 
+			</Icon> 
+             <hotSpot x="15" y="17" xunits="pixels" yunits="pixels"/>
+		</IconStyle> 
+		<LabelStyle> 
+			<scale>1.0</scale> 
+		</LabelStyle> 
+	</Style>
+	<Style id="lo"> 
+		<IconStyle> 
+			<scale>1.0</scale> 
+			<Icon> 
+				<href>ex_nhemi.png</href> 
+			</Icon> 
+             <hotSpot x="15" y="17" xunits="pixels" yunits="pixels"/>
+		</IconStyle> 
+		<LabelStyle> 
+			<scale>1.0</scale> 
+		</LabelStyle> 
+	</Style>
+	<Style id="cat2"> 
+		<IconStyle> 
+			<scale>1.0</scale> 
+			<Icon> 
+				<href>cat2_nhemi.png</href> 
+			</Icon> 
+             <hotSpot x="15" y="17" xunits="pixels" yunits="pixels"/>
+		</IconStyle> 
+		<LabelStyle> 
+			<scale>1.0</scale> 
+		</LabelStyle> 
+	</Style>
+	<Style id="ts"> 
+		<IconStyle> 
+			<scale>1.0</scale> 
+			<Icon> 
+				<href>ts_nhemi.png</href> 
+			</Icon> 
+             <hotSpot x="15" y="17" xunits="pixels" yunits="pixels"/>
+		</IconStyle> 
+		<LabelStyle> 
+			<scale>1.0</scale> 
+		</LabelStyle> 
+	</Style>
+	<Style id="cat1"> 
+		<IconStyle> 
+			<scale>1.0</scale> 
+			<Icon> 
+				<href>cat1_nhemi.png</href> 
+			</Icon> 
+             <hotSpot x="15" y="17" xunits="pixels" yunits="pixels"/>
+		</IconStyle> 
+		<LabelStyle> 
+			<scale>1.0</scale> 
+		</LabelStyle> 
+	</Style>
+	<Style id="ex"> 
+		<IconStyle> 
+			<scale>1.0</scale> 
+			<Icon> 
+				<href>ex_nhemi.png</href> 
+			</Icon> 
+             <hotSpot x="15" y="17" xunits="pixels" yunits="pixels"/>
+		</IconStyle> 
+		<LabelStyle> 
+			<scale>1.0</scale> 
+		</LabelStyle> 
+	</Style>
+	<Style id="st"> 
+		<IconStyle> 
+			<scale>1.0</scale> 
+			<Icon> 
+				<href>typhoon_nhemi.png</href> 
+			</Icon> 
+             <hotSpot x="15" y="17" xunits="pixels" yunits="pixels"/>
+		</IconStyle> 
+		<LabelStyle> 
+			<scale>1.0</scale> 
+		</LabelStyle> 
+	</Style>
+	<Style id="tc"> 
+		<IconStyle> 
+			<scale>1.0</scale> 
+			<Icon> 
+				<href>ex_nhemi.png</href> 
+			</Icon> 
+             <hotSpot x="15" y="17" xunits="pixels" yunits="pixels"/>
+		</IconStyle> 
+		<LabelStyle> 
+			<scale>1.0</scale> 
+		</LabelStyle> 
+	</Style>
+	<Style id="wv"> 
+		<IconStyle> 
+			<scale>1.0</scale> 
+			<Icon> 
+				<href>ex_nhemi.png</href> 
+			</Icon> 
+             <hotSpot x="15" y="17" xunits="pixels" yunits="pixels"/>
+		</IconStyle> 
+		<LabelStyle> 
+			<scale>1.0</scale> 
+		</LabelStyle> 
+	</Style>
+	<Style id="td"> 
+		<IconStyle> 
+			<scale>1.0</scale> 
+			<Icon> 
+				<href>td_nhemi.png</href> 
+			</Icon> 
+             <hotSpot x="15" y="17" xunits="pixels" yunits="pixels"/>
+		</IconStyle> 
+		<LabelStyle> 
+			<scale>1.0</scale> 
+		</LabelStyle> 
+	</Style>
+	<Style id="sd"> 
+		<IconStyle> 
+			<scale>1.0</scale> 
+			<Icon> 
+				<href>ex_nhemi.png</href> 
+			</Icon> 
+             <hotSpot x="15" y="17" xunits="pixels" yunits="pixels"/>
+		</IconStyle> 
+		<LabelStyle> 
+			<scale>1.0</scale> 
+		</LabelStyle> 
+	</Style>
+	<Style id="ty"> 
+		<IconStyle> 
+			<scale>1.0</scale> 
+			<Icon> 
+				<href>typhoon_nhemi.png</href> 
+			</Icon> 
+             <hotSpot x="15" y="17" xunits="pixels" yunits="pixels"/>
+		</IconStyle> 
+		<LabelStyle> 
+			<scale>1.0</scale> 
+		</LabelStyle> 
+	</Style>
+	<Folder id="data"> 
+ 	    <name>Data</name> 
+
+	   <Placemark>
+	      <name>1200 UTC JUN 20</name>
+	      <Snippet maxLines="0">empty</Snippet>
+	      <description>
+	   	  <![CDATA[<table>
+	       		<tr><td>DB GENESIS011 (AL042020)</td></tr>
+	       		<tr><td><hr></td></tr>
+	       		<tr><td>1200 UTC JUN 20</td></tr>
+	       		<tr><td>Storm Location:</td></tr>
+	       		<tr><td> <B>34.3 N, -72.9 W</B> </td></tr>
+	       		<tr><td>Min Sea Level Pressure:</td></tr>
+	       		<tr><td>1014 mb; 29.94 in Hg</td></tr>
+	       		<tr><td>Maxium Intensity:</td></tr>
+	       		<tr><td>20 knots;  23 mph;  37 kph</td></tr></table>]]>
+	       </description>
+	       <styleUrl>#ex</styleUrl>
+	       <Point>
+	   	   <coordinates>-72.9,34.3,0</coordinates>
+	       </Point>
+	       <lat>34.3</lat>
+	       <lon>-72.9</lon>
+	       <stormName>GENESIS011</stormName>
+	       <stormNum>04</stormNum>
+	       <basin>AL</basin>
+	       <stormType>DB</stormType>
+	       <intensity>20</intensity>
+	       <intensityMPH>23</intensityMPH>
+	       <intensityKPH>37</intensityKPH>
+	       <minSeaLevelPres>1014</minSeaLevelPres>
+	       <atcfdtg>2020062012</atcfdtg>
+	       <dtg>1200 UTC JUN 20</dtg>
+	   </Placemark>
+
+	   <Placemark>
+	      <name>1800 UTC JUN 20</name>
+	      <Snippet maxLines="0">empty</Snippet>
+	      <description>
+	   	  <![CDATA[<table>
+	       		<tr><td>DB GENESIS011 (AL042020)</td></tr>
+	       		<tr><td><hr></td></tr>
+	       		<tr><td>1800 UTC JUN 20</td></tr>
+	       		<tr><td>Storm Location:</td></tr>
+	       		<tr><td> <B>34.6 N, -71.2 W</B> </td></tr>
+	       		<tr><td>Min Sea Level Pressure:</td></tr>
+	       		<tr><td>1014 mb; 29.94 in Hg</td></tr>
+	       		<tr><td>Maxium Intensity:</td></tr>
+	       		<tr><td>20 knots;  23 mph;  37 kph</td></tr></table>]]>
+	       </description>
+	       <styleUrl>#ex</styleUrl>
+	       <Point>
+	   	   <coordinates>-71.2,34.6,0</coordinates>
+	       </Point>
+	       <lat>34.6</lat>
+	       <lon>-71.2</lon>
+	       <stormName>GENESIS011</stormName>
+	       <stormNum>04</stormNum>
+	       <basin>AL</basin>
+	       <stormType>DB</stormType>
+	       <intensity>20</intensity>
+	       <intensityMPH>23</intensityMPH>
+	       <intensityKPH>37</intensityKPH>
+	       <minSeaLevelPres>1014</minSeaLevelPres>
+	       <atcfdtg>2020062018</atcfdtg>
+	       <dtg>1800 UTC JUN 20</dtg>
+	   </Placemark>
+
+	   <Placemark>
+	      <name>0000 UTC JUN 21</name>
+	      <Snippet maxLines="0">empty</Snippet>
+	      <description>
+	   	  <![CDATA[<table>
+	       		<tr><td>DB GENESIS011 (AL042020)</td></tr>
+	       		<tr><td><hr></td></tr>
+	       		<tr><td>0000 UTC JUN 21</td></tr>
+	       		<tr><td>Storm Location:</td></tr>
+	       		<tr><td> <B>35.1 N, -69.7 W</B> </td></tr>
+	       		<tr><td>Min Sea Level Pressure:</td></tr>
+	       		<tr><td>1014 mb; 29.94 in Hg</td></tr>
+	       		<tr><td>Maxium Intensity:</td></tr>
+	       		<tr><td>20 knots;  23 mph;  37 kph</td></tr></table>]]>
+	       </description>
+	       <styleUrl>#ex</styleUrl>
+	       <Point>
+	   	   <coordinates>-69.7,35.1,0</coordinates>
+	       </Point>
+	       <lat>35.1</lat>
+	       <lon>-69.7</lon>
+	       <stormName>GENESIS011</stormName>
+	       <stormNum>04</stormNum>
+	       <basin>AL</basin>
+	       <stormType>DB</stormType>
+	       <intensity>20</intensity>
+	       <intensityMPH>23</intensityMPH>
+	       <intensityKPH>37</intensityKPH>
+	       <minSeaLevelPres>1014</minSeaLevelPres>
+	       <atcfdtg>2020062100</atcfdtg>
+	       <dtg>0000 UTC JUN 21</dtg>
+	   </Placemark>
+
+	   <Placemark>
+	      <name>0600 UTC JUN 21</name>
+	      <Snippet maxLines="0">empty</Snippet>
+	      <description>
+	   	  <![CDATA[<table>
+	       		<tr><td>LO GENESIS011 (AL042020)</td></tr>
+	       		<tr><td><hr></td></tr>
+	       		<tr><td>0600 UTC JUN 21</td></tr>
+	       		<tr><td>Storm Location:</td></tr>
+	       		<tr><td> <B>35.7 N, -68.5 W</B> </td></tr>
+	       		<tr><td>Min Sea Level Pressure:</td></tr>
+	       		<tr><td>1012 mb; 29.88 in Hg</td></tr>
+	       		<tr><td>Maxium Intensity:</td></tr>
+	       		<tr><td>20 knots;  23 mph;  37 kph</td></tr></table>]]>
+	       </description>
+	       <styleUrl>#ex</styleUrl>
+	       <Point>
+	   	   <coordinates>-68.5,35.7,0</coordinates>
+	       </Point>
+	       <lat>35.7</lat>
+	       <lon>-68.5</lon>
+	       <stormName>GENESIS011</stormName>
+	       <stormNum>04</stormNum>
+	       <basin>AL</basin>
+	       <stormType>LO</stormType>
+	       <intensity>20</intensity>
+	       <intensityMPH>23</intensityMPH>
+	       <intensityKPH>37</intensityKPH>
+	       <minSeaLevelPres>1012</minSeaLevelPres>
+	       <atcfdtg>2020062106</atcfdtg>
+	       <dtg>0600 UTC JUN 21</dtg>
+	   </Placemark>
+
+	   <Placemark>
+	      <name>1200 UTC JUN 21</name>
+	      <Snippet maxLines="0">empty</Snippet>
+	      <description>
+	   	  <![CDATA[<table>
+	       		<tr><td>LO INVEST (AL042020)</td></tr>
+	       		<tr><td><hr></td></tr>
+	       		<tr><td>1200 UTC JUN 21</td></tr>
+	       		<tr><td>Storm Location:</td></tr>
+	       		<tr><td> <B>36.6 N, -67.6 W</B> </td></tr>
+	       		<tr><td>Min Sea Level Pressure:</td></tr>
+	       		<tr><td>1010 mb; 29.82 in Hg</td></tr>
+	       		<tr><td>Maxium Intensity:</td></tr>
+	       		<tr><td>25 knots;  29 mph;  46 kph</td></tr></table>]]>
+	       </description>
+	       <styleUrl>#ex</styleUrl>
+	       <Point>
+	   	   <coordinates>-67.6,36.6,0</coordinates>
+	       </Point>
+	       <lat>36.6</lat>
+	       <lon>-67.6</lon>
+	       <stormName>INVEST</stormName>
+	       <stormNum>04</stormNum>
+	       <basin>AL</basin>
+	       <stormType>LO</stormType>
+	       <intensity>25</intensity>
+	       <intensityMPH>29</intensityMPH>
+	       <intensityKPH>46</intensityKPH>
+	       <minSeaLevelPres>1010</minSeaLevelPres>
+	       <atcfdtg>2020062112</atcfdtg>
+	       <dtg>1200 UTC JUN 21</dtg>
+	   </Placemark>
+
+	   <Placemark>
+	      <name>1800 UTC JUN 21</name>
+	      <Snippet maxLines="0">empty</Snippet>
+	      <description>
+	   	  <![CDATA[<table>
+	       		<tr><td>LO INVEST (AL042020)</td></tr>
+	       		<tr><td><hr></td></tr>
+	       		<tr><td>1800 UTC JUN 21</td></tr>
+	       		<tr><td>Storm Location:</td></tr>
+	       		<tr><td> <B>37.9 N, -67.3 W</B> </td></tr>
+	       		<tr><td>Min Sea Level Pressure:</td></tr>
+	       		<tr><td>1008 mb; 29.76 in Hg</td></tr>
+	       		<tr><td>Maxium Intensity:</td></tr>
+	       		<tr><td>30 knots;  35 mph;  56 kph</td></tr></table>]]>
+	       </description>
+	       <styleUrl>#ex</styleUrl>
+	       <Point>
+	   	   <coordinates>-67.3,37.9,0</coordinates>
+	       </Point>
+	       <lat>37.9</lat>
+	       <lon>-67.3</lon>
+	       <stormName>INVEST</stormName>
+	       <stormNum>04</stormNum>
+	       <basin>AL</basin>
+	       <stormType>LO</stormType>
+	       <intensity>30</intensity>
+	       <intensityMPH>35</intensityMPH>
+	       <intensityKPH>56</intensityKPH>
+	       <minSeaLevelPres>1008</minSeaLevelPres>
+	       <atcfdtg>2020062118</atcfdtg>
+	       <dtg>1800 UTC JUN 21</dtg>
+	   </Placemark>
+
+	   <Placemark>
+	      <name>0000 UTC JUN 22</name>
+	      <Snippet maxLines="0">empty</Snippet>
+	      <description>
+	   	  <![CDATA[<table>
+	       		<tr><td>LO INVEST (AL042020)</td></tr>
+	       		<tr><td><hr></td></tr>
+	       		<tr><td>0000 UTC JUN 22</td></tr>
+	       		<tr><td>Storm Location:</td></tr>
+	       		<tr><td> <B>38.6 N, -67.3 W</B> </td></tr>
+	       		<tr><td>Min Sea Level Pressure:</td></tr>
+	       		<tr><td>1010 mb; 29.82 in Hg</td></tr>
+	       		<tr><td>Maxium Intensity:</td></tr>
+	       		<tr><td>30 knots;  35 mph;  56 kph</td></tr></table>]]>
+	       </description>
+	       <styleUrl>#ex</styleUrl>
+	       <Point>
+	   	   <coordinates>-67.3,38.6,0</coordinates>
+	       </Point>
+	       <lat>38.6</lat>
+	       <lon>-67.3</lon>
+	       <stormName>INVEST</stormName>
+	       <stormNum>04</stormNum>
+	       <basin>AL</basin>
+	       <stormType>LO</stormType>
+	       <intensity>30</intensity>
+	       <intensityMPH>35</intensityMPH>
+	       <intensityKPH>56</intensityKPH>
+	       <minSeaLevelPres>1010</minSeaLevelPres>
+	       <atcfdtg>2020062200</atcfdtg>
+	       <dtg>0000 UTC JUN 22</dtg>
+	   </Placemark>
+
+	   <Placemark>
+	      <name>0600 UTC JUN 22</name>
+	      <Snippet maxLines="0">empty</Snippet>
+	      <description>
+	   	  <![CDATA[<table>
+	       		<tr><td>LO INVEST (AL042020)</td></tr>
+	       		<tr><td><hr></td></tr>
+	       		<tr><td>0600 UTC JUN 22</td></tr>
+	       		<tr><td>Storm Location:</td></tr>
+	       		<tr><td> <B>38.6 N, -67.1 W</B> </td></tr>
+	       		<tr><td>Min Sea Level Pressure:</td></tr>
+	       		<tr><td>1010 mb; 29.82 in Hg</td></tr>
+	       		<tr><td>Maxium Intensity:</td></tr>
+	       		<tr><td>30 knots;  35 mph;  56 kph</td></tr></table>]]>
+	       </description>
+	       <styleUrl>#ex</styleUrl>
+	       <Point>
+	   	   <coordinates>-67.1,38.6,0</coordinates>
+	       </Point>
+	       <lat>38.6</lat>
+	       <lon>-67.1</lon>
+	       <stormName>INVEST</stormName>
+	       <stormNum>04</stormNum>
+	       <basin>AL</basin>
+	       <stormType>LO</stormType>
+	       <intensity>30</intensity>
+	       <intensityMPH>35</intensityMPH>
+	       <intensityKPH>56</intensityKPH>
+	       <minSeaLevelPres>1010</minSeaLevelPres>
+	       <atcfdtg>2020062206</atcfdtg>
+	       <dtg>0600 UTC JUN 22</dtg>
+	   </Placemark>
+
+	   <Placemark>
+	      <name>1200 UTC JUN 22</name>
+	      <Snippet maxLines="0">empty</Snippet>
+	      <description>
+	   	  <![CDATA[<table>
+	       		<tr><td>LO INVEST (AL042020)</td></tr>
+	       		<tr><td><hr></td></tr>
+	       		<tr><td>1200 UTC JUN 22</td></tr>
+	       		<tr><td>Storm Location:</td></tr>
+	       		<tr><td> <B>38.4 N, -66.9 W</B> </td></tr>
+	       		<tr><td>Min Sea Level Pressure:</td></tr>
+	       		<tr><td>1009 mb; 29.79 in Hg</td></tr>
+	       		<tr><td>Maxium Intensity:</td></tr>
+	       		<tr><td>30 knots;  35 mph;  56 kph</td></tr></table>]]>
+	       </description>
+	       <styleUrl>#ex</styleUrl>
+	       <Point>
+	   	   <coordinates>-66.9,38.4,0</coordinates>
+	       </Point>
+	       <lat>38.4</lat>
+	       <lon>-66.9</lon>
+	       <stormName>INVEST</stormName>
+	       <stormNum>04</stormNum>
+	       <basin>AL</basin>
+	       <stormType>LO</stormType>
+	       <intensity>30</intensity>
+	       <intensityMPH>35</intensityMPH>
+	       <intensityKPH>56</intensityKPH>
+	       <minSeaLevelPres>1009</minSeaLevelPres>
+	       <atcfdtg>2020062212</atcfdtg>
+	       <dtg>1200 UTC JUN 22</dtg>
+	   </Placemark>
+
+	   <Placemark>
+	      <name>1800 UTC JUN 22</name>
+	      <Snippet maxLines="0">empty</Snippet>
+	      <description>
+	   	  <![CDATA[<table>
+	       		<tr><td>SD FOUR (AL042020)</td></tr>
+	       		<tr><td><hr></td></tr>
+	       		<tr><td>1800 UTC JUN 22</td></tr>
+	       		<tr><td>Storm Location:</td></tr>
+	       		<tr><td> <B>38.1 N, -66.2 W</B> </td></tr>
+	       		<tr><td>Min Sea Level Pressure:</td></tr>
+	       		<tr><td>1009 mb; 29.79 in Hg</td></tr>
+	       		<tr><td>Maxium Intensity:</td></tr>
+	       		<tr><td>30 knots;  35 mph;  56 kph</td></tr></table>]]>
+	       </description>
+	       <styleUrl>#sd</styleUrl>
+	       <Point>
+	   	   <coordinates>-66.2,38.1,0</coordinates>
+	       </Point>
+	       <lat>38.1</lat>
+	       <lon>-66.2</lon>
+	       <stormName>FOUR</stormName>
+	       <stormNum>04</stormNum>
+	       <basin>AL</basin>
+	       <stormType>SD</stormType>
+	       <intensity>30</intensity>
+	       <intensityMPH>35</intensityMPH>
+	       <intensityKPH>56</intensityKPH>
+	       <minSeaLevelPres>1009</minSeaLevelPres>
+	       <atcfdtg>2020062218</atcfdtg>
+	       <dtg>1800 UTC JUN 22</dtg>
+	   </Placemark>
+
+	   <Placemark>
+	      <name>0000 UTC JUN 23</name>
+	      <Snippet maxLines="0">empty</Snippet>
+	      <description>
+	   	  <![CDATA[<table>
+	       		<tr><td>SD FOUR (AL042020)</td></tr>
+	       		<tr><td><hr></td></tr>
+	       		<tr><td>0000 UTC JUN 23</td></tr>
+	       		<tr><td>Storm Location:</td></tr>
+	       		<tr><td> <B>38.5 N, -65.1 W</B> </td></tr>
+	       		<tr><td>Min Sea Level Pressure:</td></tr>
+	       		<tr><td>1009 mb; 29.79 in Hg</td></tr>
+	       		<tr><td>Maxium Intensity:</td></tr>
+	       		<tr><td>30 knots;  35 mph;  56 kph</td></tr></table>]]>
+	       </description>
+	       <styleUrl>#sd</styleUrl>
+	       <Point>
+	   	   <coordinates>-65.1,38.5,0</coordinates>
+	       </Point>
+	       <lat>38.5</lat>
+	       <lon>-65.1</lon>
+	       <stormName>FOUR</stormName>
+	       <stormNum>04</stormNum>
+	       <basin>AL</basin>
+	       <stormType>SD</stormType>
+	       <intensity>30</intensity>
+	       <intensityMPH>35</intensityMPH>
+	       <intensityKPH>56</intensityKPH>
+	       <minSeaLevelPres>1009</minSeaLevelPres>
+	       <atcfdtg>2020062300</atcfdtg>
+	       <dtg>0000 UTC JUN 23</dtg>
+	   </Placemark>
+
+	   <Placemark>
+	      <name>0600 UTC JUN 23</name>
+	      <Snippet maxLines="0">empty</Snippet>
+	      <description>
+	   	  <![CDATA[<table>
+	       		<tr><td>TS FOUR (AL042020)</td></tr>
+	       		<tr><td><hr></td></tr>
+	       		<tr><td>0600 UTC JUN 23</td></tr>
+	       		<tr><td>Storm Location:</td></tr>
+	       		<tr><td> <B>39.0 N, -63.9 W</B> </td></tr>
+	       		<tr><td>Min Sea Level Pressure:</td></tr>
+	       		<tr><td>1005 mb; 29.67 in Hg</td></tr>
+	       		<tr><td>Maxium Intensity:</td></tr>
+	       		<tr><td>35 knots;  40 mph;  65 kph</td></tr></table>]]>
+	       </description>
+	       <styleUrl>#ts</styleUrl>
+	       <Point>
+	   	   <coordinates>-63.9,39.0,0</coordinates>
+	       </Point>
+	       <lat>39.0</lat>
+	       <lon>-63.9</lon>
+	       <stormName>FOUR</stormName>
+	       <stormNum>04</stormNum>
+	       <basin>AL</basin>
+	       <stormType>TS</stormType>
+	       <intensity>35</intensity>
+	       <intensityMPH>40</intensityMPH>
+	       <intensityKPH>65</intensityKPH>
+	       <minSeaLevelPres>1005</minSeaLevelPres>
+	       <atcfdtg>2020062306</atcfdtg>
+	       <dtg>0600 UTC JUN 23</dtg>
+	   </Placemark>
+
+	   <Placemark>
+	      <name>1200 UTC JUN 23</name>
+	      <Snippet maxLines="0">empty</Snippet>
+	      <description>
+	   	  <![CDATA[<table>
+	       		<tr><td>TS FOUR (AL042020)</td></tr>
+	       		<tr><td><hr></td></tr>
+	       		<tr><td>1200 UTC JUN 23</td></tr>
+	       		<tr><td>Storm Location:</td></tr>
+	       		<tr><td> <B>39.4 N, -62.7 W</B> </td></tr>
+	       		<tr><td>Min Sea Level Pressure:</td></tr>
+	       		<tr><td>1002 mb; 29.58 in Hg</td></tr>
+	       		<tr><td>Maxium Intensity:</td></tr>
+	       		<tr><td>40 knots;  46 mph;  74 kph</td></tr></table>]]>
+	       </description>
+	       <styleUrl>#ts</styleUrl>
+	       <Point>
+	   	   <coordinates>-62.7,39.4,0</coordinates>
+	       </Point>
+	       <lat>39.4</lat>
+	       <lon>-62.7</lon>
+	       <stormName>FOUR</stormName>
+	       <stormNum>04</stormNum>
+	       <basin>AL</basin>
+	       <stormType>TS</stormType>
+	       <intensity>40</intensity>
+	       <intensityMPH>46</intensityMPH>
+	       <intensityKPH>74</intensityKPH>
+	       <minSeaLevelPres>1002</minSeaLevelPres>
+	       <atcfdtg>2020062312</atcfdtg>
+	       <dtg>1200 UTC JUN 23</dtg>
+	   </Placemark>
+
+	   <Placemark>
+	      <name>1800 UTC JUN 23</name>
+	      <Snippet maxLines="0">empty</Snippet>
+	      <description>
+	   	  <![CDATA[<table>
+	       		<tr><td>TS DOLLY (AL042020)</td></tr>
+	       		<tr><td><hr></td></tr>
+	       		<tr><td>1800 UTC JUN 23</td></tr>
+	       		<tr><td>Storm Location:</td></tr>
+	       		<tr><td> <B>39.8 N, -61.6 W</B> </td></tr>
+	       		<tr><td>Min Sea Level Pressure:</td></tr>
+	       		<tr><td>1002 mb; 29.58 in Hg</td></tr>
+	       		<tr><td>Maxium Intensity:</td></tr>
+	       		<tr><td>40 knots;  46 mph;  74 kph</td></tr></table>]]>
+	       </description>
+	       <styleUrl>#ts</styleUrl>
+	       <Point>
+	   	   <coordinates>-61.6,39.8,0</coordinates>
+	       </Point>
+	       <lat>39.8</lat>
+	       <lon>-61.6</lon>
+	       <stormName>DOLLY</stormName>
+	       <stormNum>04</stormNum>
+	       <basin>AL</basin>
+	       <stormType>TS</stormType>
+	       <intensity>40</intensity>
+	       <intensityMPH>46</intensityMPH>
+	       <intensityKPH>74</intensityKPH>
+	       <minSeaLevelPres>1002</minSeaLevelPres>
+	       <atcfdtg>2020062318</atcfdtg>
+	       <dtg>1800 UTC JUN 23</dtg>
+	   </Placemark>
+
+	   <Placemark>
+	      <name>0000 UTC JUN 24</name>
+	      <Snippet maxLines="0">empty</Snippet>
+	      <description>
+	   	  <![CDATA[<table>
+	       		<tr><td>TS DOLLY (AL042020)</td></tr>
+	       		<tr><td><hr></td></tr>
+	       		<tr><td>0000 UTC JUN 24</td></tr>
+	       		<tr><td>Storm Location:</td></tr>
+	       		<tr><td> <B>40.2 N, -60.6 W</B> </td></tr>
+	       		<tr><td>Min Sea Level Pressure:</td></tr>
+	       		<tr><td>1004 mb; 29.64 in Hg</td></tr>
+	       		<tr><td>Maxium Intensity:</td></tr>
+	       		<tr><td>35 knots;  40 mph;  65 kph</td></tr></table>]]>
+	       </description>
+	       <styleUrl>#ts</styleUrl>
+	       <Point>
+	   	   <coordinates>-60.6,40.2,0</coordinates>
+	       </Point>
+	       <lat>40.2</lat>
+	       <lon>-60.6</lon>
+	       <stormName>DOLLY</stormName>
+	       <stormNum>04</stormNum>
+	       <basin>AL</basin>
+	       <stormType>TS</stormType>
+	       <intensity>35</intensity>
+	       <intensityMPH>40</intensityMPH>
+	       <intensityKPH>65</intensityKPH>
+	       <minSeaLevelPres>1004</minSeaLevelPres>
+	       <atcfdtg>2020062400</atcfdtg>
+	       <dtg>0000 UTC JUN 24</dtg>
+	   </Placemark>
+
+	   <Placemark>
+	      <name>0600 UTC JUN 24</name>
+	      <Snippet maxLines="0">empty</Snippet>
+	      <description>
+	   	  <![CDATA[<table>
+	       		<tr><td>TD DOLLY (AL042020)</td></tr>
+	       		<tr><td><hr></td></tr>
+	       		<tr><td>0600 UTC JUN 24</td></tr>
+	       		<tr><td>Storm Location:</td></tr>
+	       		<tr><td> <B>41.2 N, -59.6 W</B> </td></tr>
+	       		<tr><td>Min Sea Level Pressure:</td></tr>
+	       		<tr><td>1005 mb; 29.67 in Hg</td></tr>
+	       		<tr><td>Maxium Intensity:</td></tr>
+	       		<tr><td>30 knots;  35 mph;  56 kph</td></tr></table>]]>
+	       </description>
+	       <styleUrl>#td</styleUrl>
+	       <Point>
+	   	   <coordinates>-59.6,41.2,0</coordinates>
+	       </Point>
+	       <lat>41.2</lat>
+	       <lon>-59.6</lon>
+	       <stormName>DOLLY</stormName>
+	       <stormNum>04</stormNum>
+	       <basin>AL</basin>
+	       <stormType>TD</stormType>
+	       <intensity>30</intensity>
+	       <intensityMPH>35</intensityMPH>
+	       <intensityKPH>56</intensityKPH>
+	       <minSeaLevelPres>1005</minSeaLevelPres>
+	       <atcfdtg>2020062406</atcfdtg>
+	       <dtg>0600 UTC JUN 24</dtg>
+	   </Placemark>
+
+	   <Placemark>
+	      <name>1200 UTC JUN 24</name>
+	      <Snippet maxLines="0">empty</Snippet>
+	      <description>
+	   	  <![CDATA[<table>
+	       		<tr><td>LO DOLLY (AL042020)</td></tr>
+	       		<tr><td><hr></td></tr>
+	       		<tr><td>1200 UTC JUN 24</td></tr>
+	       		<tr><td>Storm Location:</td></tr>
+	       		<tr><td> <B>42.0 N, -58.5 W</B> </td></tr>
+	       		<tr><td>Min Sea Level Pressure:</td></tr>
+	       		<tr><td>1007 mb; 29.73 in Hg</td></tr>
+	       		<tr><td>Maxium Intensity:</td></tr>
+	       		<tr><td>30 knots;  35 mph;  56 kph</td></tr></table>]]>
+	       </description>
+	       <styleUrl>#ex</styleUrl>
+	       <Point>
+	   	   <coordinates>-58.5,42.0,0</coordinates>
+	       </Point>
+	       <lat>42.0</lat>
+	       <lon>-58.5</lon>
+	       <stormName>DOLLY</stormName>
+	       <stormNum>04</stormNum>
+	       <basin>AL</basin>
+	       <stormType>LO</stormType>
+	       <intensity>30</intensity>
+	       <intensityMPH>35</intensityMPH>
+	       <intensityKPH>56</intensityKPH>
+	       <minSeaLevelPres>1007</minSeaLevelPres>
+	       <atcfdtg>2020062412</atcfdtg>
+	       <dtg>1200 UTC JUN 24</dtg>
+	   </Placemark>
+
+	   <Placemark>
+	      <name>1800 UTC JUN 24</name>
+	      <Snippet maxLines="0">empty</Snippet>
+	      <description>
+	   	  <![CDATA[<table>
+	       		<tr><td>LO DOLLY (AL042020)</td></tr>
+	       		<tr><td><hr></td></tr>
+	       		<tr><td>1800 UTC JUN 24</td></tr>
+	       		<tr><td>Storm Location:</td></tr>
+	       		<tr><td> <B>43.0 N, -57.1 W</B> </td></tr>
+	       		<tr><td>Min Sea Level Pressure:</td></tr>
+	       		<tr><td>1008 mb; 29.76 in Hg</td></tr>
+	       		<tr><td>Maxium Intensity:</td></tr>
+	       		<tr><td>25 knots;  29 mph;  46 kph</td></tr></table>]]>
+	       </description>
+	       <styleUrl>#ex</styleUrl>
+	       <Point>
+	   	   <coordinates>-57.1,43.0,0</coordinates>
+	       </Point>
+	       <lat>43.0</lat>
+	       <lon>-57.1</lon>
+	       <stormName>DOLLY</stormName>
+	       <stormNum>04</stormNum>
+	       <basin>AL</basin>
+	       <stormType>LO</stormType>
+	       <intensity>25</intensity>
+	       <intensityMPH>29</intensityMPH>
+	       <intensityKPH>46</intensityKPH>
+	       <minSeaLevelPres>1008</minSeaLevelPres>
+	       <atcfdtg>2020062418</atcfdtg>
+	       <dtg>1800 UTC JUN 24</dtg>
+	   </Placemark>
+
+        </Folder>
+<Folder>
+<name>Legend</name>
+<open>0</open>
+<visibility>1</visibility>
+<ScreenOverlay>
+<name>Legend</name>
+ <overlayXY x="0" y="1" xunits="fraction" yunits="fraction"/>
+         <screenXY x="0" y="1" xunits="fraction" yunits="fraction"/>
+         <rotationXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+         <size x="-1" y="-1" xunits="pixels" yunits="pixels"/>
+</ScreenOverlay>
+</Folder>
+
+
+<Folder><name>bt_radii</name>
+
+  <Placemark><name>34</name><Style><LineStyle><color>FF000000</color></LineStyle><PolyStyle><fill>1</fill><color>3c14B4FA</color></PolyStyle></Style>
+        <Polygon><outerBoundaryIs><LinearRing><coordinates>-63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -62.6158295,38.9842529 -62.616539,38.9668427 -62.6176414,38.9494362 -62.6191216,38.9320564 -62.6210022,38.9146996 -62.6232605,38.8973656 -62.6259117,38.8800697 -62.628952,38.8628082 -62.6323738,38.8455925 -62.6361771,38.8284264 -62.6403656,38.8113136 -62.6449356,38.7942581 -62.6498795,38.7772675 -62.655201,38.7603493 -62.6608963,38.7435074 -62.6669693,38.7267418 -62.6734161,38.7100601 -62.6802254,38.6934738 -62.6874046,38.6769753 -62.6949463,38.6605797 -62.7028542,38.6442909 -62.711113,38.6281128 -62.719738,38.6120415 -62.7287064,38.596096 -62.7380295,38.5802689 -62.7476997,38.5645752 -62.7577209,38.549015 -62.768074,38.533596 -62.7787704,38.5183105 -62.7898026,38.5031815 -62.8011665,38.4882011 -62.8128548,38.4733772 -62.8248672,38.4587135 -62.8371964,38.4442101 -62.8498459,38.429882 -62.862812,38.4157257 -62.8760757,38.4017525 -62.8896523,38.3879547 -62.9035263,38.3743477 -62.9176903,38.3609238 -62.9321518,38.3476982 -62.9468956,38.334671 -62.9619293,38.321846 -62.9772377,38.3092308 -62.9928169,38.2968178 -63.0086632,38.2846222 -63.0247765,38.2726402 -63.0411415,38.2608795 -63.057766,38.2493401 -63.0746346,38.2380333 -63.0917511,38.2269554 -63.109108,38.2161064 -63.1266937,38.2055016 -63.1445084,38.1951332 -63.1625481,38.185009 -63.1808052,38.1751289 -63.1992645,38.1655006 -63.2179413,38.1561203 -63.2368126,38.1469955 -63.2558823,38.1381302 -63.275135,38.1295242 -63.2945747,38.1211815 -63.3141975,38.113102 -63.3339844,38.1052895 -63.3539429,38.0977478 -63.3740578,38.0904808 -63.3943291,38.0834808 -63.4147453,38.0767593 -63.4353027,38.0703163 -63.4560051,38.0641594 -63.4768295,38.0582733 -63.4977798,38.0526772 -63.5188522,38.0473633 -63.5400314,38.0423393 -63.5613136,38.0376015 -63.5826988,38.0331497 -63.6041794,38.0289955 -63.6257439,38.0251236 -63.6473885,38.021553 -63.6691093,38.0182724 -63.6908913,38.0152893 -63.712738,38.0125999 -63.734642,38.0102119 -63.756588,38.0081139 -63.7785835,38.006321 -63.8006096,38.0048218 -63.8226662,38.0036278 -63.8447456,38.0027237 -63.8668404,38.0021286 -63.8889427,38.0018234 -63.9110527,38.0018234 -63.9331551,38.0021286 -63.9552536,38.0027237 -63.9773331,38.0036201 -63.9993896,38.0048218 -64.0214157,38.0063171 -64.0434113,38.0081139 -64.065361,38.0102119 -64.0872574,38.0125999 -64.109108,38.0152893 -64.1308899,38.0182724 -64.1526108,38.021553 -64.1742554,38.0251236 -64.195816,38.0289955 -64.2173004,38.0331497 -64.2386856,38.0376015 -64.259964,38.0423317 -64.2811508,38.0473633 -64.3022156,38.0526772 -64.3231659,38.0582733 -64.3440018,38.0641518 -64.3646927,38.0703163 -64.3852539,38.0767593 -64.4056778,38.0834808 -64.4259415,38.090477 -64.4460526,38.0977478 -64.466011,38.1052895 -64.4858093,38.1130981 -64.5054245,38.1211815 -64.5248642,38.1295204 -64.5441208,38.1381302 -64.5631866,38.1469917 -64.5820618,38.1561165 -64.6007309,38.1654968 -64.6192017,38.1751251 -64.6374512,38.1850014 -64.6554871,38.1951294 -64.6733017,38.2054977 -64.6908951,38.2161064 -64.7082443,38.2269554 -64.7253647,38.2380333 -64.7422333,38.2493401 -64.7588577,38.2608719 -64.7752304,38.2726326 -64.7913361,38.2846184 -64.8071899,38.296814 -64.8227692,38.3092232 -64.8380737,38.3218422 -64.8531036,38.3346672 -64.8678513,38.3476944 -64.882309,38.36092 -64.8964767,38.3743439 -64.9103546,38.3879509 -64.9239273,38.4017448 -64.9371948,38.4157219 -64.9501495,38.4298782 -64.9627991,38.4442101 -64.9751358,38.4587097 -64.9871521,38.4733734 -64.9988403,38.4881935 -65.0101929,38.5031738 -65.021225,38.5183067 -65.0319214,38.5335884 -65.0422821,38.5490112 -65.0522995,38.5645714 -65.0619659,38.580265 -65.0712891,38.5960922 -65.0802689,38.6120377 -65.0888901,38.6281052 -65.0971527,38.6442871 -65.1050568,38.6605759 -65.1126022,38.6769676 -65.1197815,38.69347 -65.1265869,38.7100563 -65.1330338,38.726738 -65.1390991,38.7434998 -65.1448059,38.7603455 -65.1501236,38.7772636 -65.1550751,38.7942543 -65.1596375,38.8113098 -65.163826,38.8284225 -65.1676331,38.8455849 -65.171051,38.8628044 -65.1740952,38.8800621 -65.1767426,38.8973618 -65.1790009,38.9146957 -65.1808853,38.9320526 -65.1823654,38.9494362 -65.1834641,38.966835 -65.1841736,38.9842491 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038 -63.9000015,39.0000038</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+  <Placemark><name>34</name><Style><LineStyle><color>FF000000</color></LineStyle><PolyStyle><fill>1</fill><color>3c14B4FA</color></PolyStyle></Style>
+        <Polygon><outerBoundaryIs><LinearRing><coordinates>-62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -61.4085121,39.3841476 -61.4092216,39.3667374 -61.4103279,39.3493423 -61.4118309,39.331955 -61.413723,39.3145981 -61.4160042,39.2972641 -61.4186745,39.2799683 -61.4217339,39.2627068 -61.4251785,39.245491 -61.4290085,39.2283287 -61.4332237,39.2112198 -61.4378204,39.1941605 -61.4427986,39.1771736 -61.4481544,39.1602592 -61.4538918,39.1434135 -61.4600029,39.1266479 -61.4664879,39.1099663 -61.4733353,39.09338 -61.4805641,39.0768852 -61.4881516,39.0604897 -61.496109,39.0442009 -61.5044212,39.028019 -61.5130882,39.0119591 -61.5221176,38.9960098 -61.5315018,38.9801865 -61.5412292,38.9644966 -61.5513039,38.9489326 -61.5617256,38.9335136 -61.5724831,38.9182396 -61.5835762,38.9031067 -61.5950089,38.8881226 -61.6067657,38.8733063 -61.6188469,38.8586426 -61.6312523,38.8441429 -61.6439743,38.8298187 -61.6570129,38.8156624 -61.6703606,38.8016891 -61.6840057,38.7878952 -61.6979599,38.7742844 -61.7122154,38.7608643 -61.726757,38.7476387 -61.7415848,38.7346191 -61.7567024,38.7217903 -61.7720947,38.7091713 -61.7877655,38.6967697 -61.8037071,38.6845703 -61.8199081,38.6725883 -61.8363686,38.6608353 -61.8530884,38.6492996 -61.8700562,38.6379929 -61.8872681,38.6269112 -61.9047203,38.6160698 -61.9224091,38.6054611 -61.9403229,38.5951004 -61.9584579,38.5849762 -61.9768181,38.5750999 -61.995388,38.5654678 -62.014164,38.5560913 -62.0331383,38.5469704 -62.0523186,38.538105 -62.071682,38.5294991 -62.0912323,38.5211563 -62.1109543,38.5130844 -62.1308594,38.5052719 -62.1509247,38.4977303 -62.1711502,38.4904594 -62.1915398,38.4834633 -62.2120705,38.4767494 -62.2327461,38.4703064 -62.2535553,38.4641418 -62.274498,38.4582634 -62.2955627,38.4526672 -62.3167496,38.4473572 -62.338047,38.4423294 -62.3594513,38.4375954 -62.3809547,38.4331474 -62.4025497,38.4289856 -62.4242363,38.4251213 -62.4459991,38.4215546 -62.4678345,38.4182739 -62.4897461,38.415287 -62.5117111,38.4125977 -62.5337334,38.4102097 -62.5558052,38.4081154 -62.5779152,38.4063187 -62.6000671,38.4048233 -62.6222458,38.4036217 -62.6444435,38.4027214 -62.6666603,38.4021225 -62.6888847,38.401825 -62.7111168,38.401825 -62.733345,38.4021225 -62.7555618,38.4027214 -62.7777596,38.4036217 -62.7999382,38.4048233 -62.8220901,38.4063187 -62.8442039,38.4081154 -62.866272,38.4102097 -62.8882942,38.4125977 -62.9102592,38.415287 -62.9321709,38.4182663 -62.9540062,38.4215469 -62.975769,38.4251213 -62.9974556,38.4289856 -63.0190506,38.4331436 -63.040554,38.4375954 -63.0619583,38.4423294 -63.0832558,38.4473572 -63.1044426,38.4526672 -63.1255074,38.4582634 -63.1464462,38.4641418 -63.1672592,38.4703064 -63.1879425,38.4767456 -63.2084732,38.4834633 -63.2288551,38.4904594 -63.2490768,38.4977303 -63.269146,38.5052719 -63.2890472,38.5130768 -63.308773,38.5211563 -63.3283234,38.5294991 -63.3476944,38.538105 -63.3668633,38.5469704 -63.3858452,38.5560913 -63.4046211,38.5654678 -63.4231873,38.5750961 -63.4415474,38.5849724 -63.4596863,38.5950928 -63.4776039,38.6054573 -63.495285,38.616066 -63.5127373,38.6269112 -63.5299492,38.6379852 -63.546917,38.6492996 -63.5636368,38.6608276 -63.5800972,38.6725845 -63.5963058,38.6845703 -63.6122398,38.6967621 -63.6279068,38.7091675 -63.6433029,38.7217865 -63.6584206,38.7346153 -63.6732521,38.7476387 -63.6877937,38.7608604 -63.7020416,38.7742805 -63.7159958,38.7878876 -63.7296524,38.8016815 -63.7429962,38.8156586 -63.7560349,38.8298111 -63.7687531,38.8441391 -63.7811584,38.8586388 -63.7932472,38.8733025 -63.8050003,38.8881226 -63.8164291,38.9030991 -63.8275261,38.918232 -63.8382835,38.9335098 -63.8487015,38.9489326 -63.8587837,38.964489 -63.8685074,38.9801826 -63.8778877,38.996006 -63.8869171,39.0119514 -63.8955917,39.0280151 -63.903904,39.0441971 -63.9118614,39.0604897 -63.9194489,39.0768814 -63.9266663,39.0933723 -63.9335251,39.1099663 -63.9400063,39.1266403 -63.9461212,39.1434097 -63.9518509,39.1602516 -63.9572105,39.177166 -63.9621925,39.1941566 -63.9667892,39.2112122 -63.9710007,39.2283249 -63.9748344,39.245491 -63.9782753,39.2627068 -63.9813385,39.2799644 -63.9840088,39.2972641 -63.98629,39.3145943 -63.9881821,39.3319511 -63.9896774,39.3493347 -63.9907913,39.3667374 -63.9915009,39.3841476 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015 -62.7000046,39.4000015</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+  <Placemark><name>34</name><Style><LineStyle><color>FF000000</color></LineStyle><PolyStyle><fill>1</fill><color>3c14B4FA</color></PolyStyle></Style>
+        <Polygon><outerBoundaryIs><LinearRing><coordinates>-61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -60.3010292,39.78405 -60.301754,39.7666359 -60.3028755,39.7492371 -60.3043823,39.7318573 -60.3062897,39.7144966 -60.3085899,39.6971664 -60.3112831,39.6798668 -60.3143616,39.6626091 -60.3178329,39.6453934 -60.3216896,39.6282272 -60.3259315,39.6111183 -60.3305626,39.5940628 -60.3355713,39.5770798 -60.3409653,39.5601616 -60.3467369,39.5433121 -60.3528862,39.5265541 -60.3594131,39.5098763 -60.3663139,39.4932899 -60.3735809,39.4767952 -60.381218,39.4603996 -60.3892212,39.4441147 -60.397583,39.4279327 -60.406311,39.411869 -60.4153938,39.3959274 -60.4248276,39.3801041 -60.4346199,39.3644142 -60.4447556,39.3488541 -60.4552422,39.3334351 -60.4660606,39.3181572 -60.4772224,39.3030319 -60.4887238,39.2880516 -60.5005455,39.2732315 -60.5127029,39.2585678 -60.5251846,39.2440758 -60.5379753,39.2297478 -60.5510902,39.2155952 -60.564518,39.201622 -60.5782471,39.1878281 -60.5922813,39.174221 -60.6066208,39.1608047 -60.6212502,39.147583 -60.6361656,39.1345558 -60.6513634,39.1217346 -60.6668472,39.1091232 -60.6826134,39.096714 -60.6986427,39.0845184 -60.7149391,39.0725441 -60.7314949,39.0607872 -60.7483101,39.0492554 -60.7653732,39.0379486 -60.7826881,39.0268707 -60.8002357,39.0160332 -60.8180275,39.0054283 -60.8360443,38.99506 -60.85429,38.9849396 -60.8727455,38.9750633 -60.8914261,38.9654388 -60.910305,38.9560585 -60.9293938,38.9469452 -60.9486771,38.9380798 -60.9681473,38.9294739 -60.987812,38.9211349 -61.0076485,38.9130554 -61.0276604,38.9052505 -61.0478439,38.8977127 -61.0681839,38.8904457 -61.0886803,38.8834534 -61.1093292,38.8767319 -61.1301193,38.8702888 -61.1510544,38.8641319 -61.1721115,38.8582497 -61.1932983,38.8526535 -61.2146034,38.8473434 -61.2360229,38.8423195 -61.2575455,38.8375854 -61.2791672,38.8331413 -61.3008804,38.8289833 -61.3226891,38.825119 -61.344574,38.8215408 -61.3665314,38.818264 -61.3885612,38.8152847 -61.410656,38.8125992 -61.4328003,38.8102036 -61.4549904,38.8081131 -61.4772301,38.8063164 -61.4995041,38.8048172 -61.5218048,38.8036232 -61.5441322,38.8027267 -61.5664749,38.802124 -61.5888214,38.8018265 -61.6111755,38.8018265 -61.6335258,38.802124 -61.6558685,38.8027267 -61.678196,38.8036232 -61.7004967,38.8048172 -61.7227707,38.8063164 -61.7450066,38.8081131 -61.7672005,38.8102036 -61.789341,38.8125992 -61.8114395,38.8152847 -61.8334656,38.818264 -61.8554268,38.8215408 -61.8773079,38.825119 -61.8991165,38.8289795 -61.9208298,38.8331413 -61.9424553,38.8375854 -61.9639854,38.8423195 -61.9853973,38.8473434 -62.0066986,38.8526535 -62.0278854,38.8582497 -62.0489502,38.8641281 -62.0698776,38.8702888 -62.0906715,38.8767319 -62.1113167,38.8834496 -62.1318169,38.8904381 -62.1521568,38.8977127 -62.1723404,38.9052505 -62.1923523,38.9130554 -62.2121925,38.9211349 -62.2318497,38.9294739 -62.2513237,38.9380798 -62.270607,38.9469414 -62.2896957,38.9560585 -62.3085823,38.965435 -62.3272552,38.9750633 -62.3457184,38.9849396 -62.3639603,38.9950562 -62.3819771,39.0054245 -62.399765,39.0160294 -62.4173164,39.0268669 -62.4346237,39.0379448 -62.4516945,39.0492554 -62.468502,39.0607834 -62.4850655,39.0725403 -62.5013618,39.0845146 -62.517395,39.096714 -62.5331497,39.1091194 -62.5486336,39.1217346 -62.563839,39.1345558 -62.5787544,39.1475792 -62.5933876,39.1608047 -62.6077156,39.1742172 -62.6217537,39.1878242 -62.6354866,39.2016182 -62.6489105,39.2155914 -62.6620216,39.229744 -62.6748238,39.2440681 -62.6873016,39.258564 -62.6994514,39.2732239 -62.7112808,39.2880478 -62.7227783,39.3030281 -62.7339363,39.3181534 -62.7447624,39.3334312 -62.755249,39.3488503 -62.7653847,39.3644066 -62.7751732,39.3801003 -62.7846107,39.3959198 -62.7936974,39.4118614 -62.8024178,39.4279289 -62.8107834,39.4441071 -62.8187904,39.4603996 -62.8264275,39.4767914 -62.8336945,39.4932861 -62.8405914,39.5098724 -62.8471146,39.5265503 -62.8532677,39.5433083 -62.8590393,39.560154 -62.8644295,39.5770721 -62.869442,39.594059 -62.874073,39.6111145 -62.878315,39.6282234 -62.8821754,39.6453896 -62.885643,39.6626053 -62.8887253,39.679863 -62.8914146,39.6971626 -62.8937111,39.7144928 -62.8956223,39.7318535 -62.8971329,39.7492332 -62.8982506,39.7666321 -62.8989754,39.7840462 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031 -61.6000023,39.8000031</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+  <Placemark><name>34</name><Style><LineStyle><color>FF000000</color></LineStyle><PolyStyle><fill>1</fill><color>3c14B4FA</color></PolyStyle></Style>
+        <Polygon><outerBoundaryIs><LinearRing><coordinates>-60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -59.2933998,40.1839485 -59.294136,40.1665344 -59.2952614,40.1491394 -59.2967911,40.1317558 -59.2987137,40.1143951 -59.3010292,40.0970612 -59.3037376,40.0797691 -59.3068466,40.0625076 -59.3103371,40.0452957 -59.3142242,40.0281296 -59.3185005,40.0110207 -59.3231583,39.9939651 -59.3281975,39.9769783 -59.3336296,39.9600601 -59.3394394,39.943222 -59.3456306,39.9264565 -59.3521996,39.9097824 -59.3591385,39.8931923 -59.3664551,39.8767014 -59.3741379,39.8603096 -59.3821907,39.8440247 -59.3906136,39.8278503 -59.3993912,39.8117828 -59.4085274,39.7958412 -59.4180298,39.7800217 -59.4278793,39.7643318 -59.438076,39.7487755 -59.4486198,39.7333527 -59.459507,39.7180824 -59.4707451,39.7029572 -59.4823074,39.687973 -59.4942055,39.6731567 -59.5064316,39.6584969 -59.5189857,39.6440048 -59.5318604,39.6296768 -59.5450554,39.6155281 -59.5585594,39.6015587 -59.5723724,39.5877647 -59.5864944,39.5741615 -59.600914,39.5607491 -59.6156273,39.5475273 -59.6306305,39.5345039 -59.6459236,39.5216866 -59.661499,39.5090675 -59.6773491,39.496666 -59.6934776,39.4844742 -59.7098694,39.472496 -59.7265205,39.460743 -59.7434349,39.4492149 -59.7606049,39.4379044 -59.7780151,39.4268341 -59.7956619,39.4159966 -59.8135605,39.4053879 -59.8316803,39.3950272 -59.8500252,39.3849068 -59.8685951,39.3750305 -59.8873787,39.3654099 -59.9063759,39.3560371 -59.9255676,39.3469162 -59.9449654,39.3380547 -59.9645462,39.3294525 -59.9843216,39.3211136 -60.0042801,39.3130417 -60.0243988,39.305233 -60.0447006,39.2976952 -60.065155,39.2904243 -60.0857773,39.2834396 -60.1065407,39.2767181 -60.1274452,39.2702827 -60.1484985,39.2641182 -60.1696777,39.2582436 -60.1909866,39.2526474 -60.2124062,39.2473373 -60.2339516,39.2423172 -60.2555962,39.2375793 -60.2773438,39.2331352 -60.2991867,39.2289772 -60.3211098,39.2251167 -60.3431244,39.2215385 -60.3652077,39.2182655 -60.3873634,39.2152786 -60.4095764,39.2125969 -60.4318466,39.2102089 -60.4541702,39.2081146 -60.476532,39.2063217 -60.4989357,39.2048225 -60.5213585,39.2036247 -60.543808,39.2027206 -60.5662804,39.2021255 -60.5887566,39.2018242 -60.6112366,39.2018242 -60.6337166,39.2021255 -60.6561852,39.2027206 -60.6786385,39.2036247 -60.7010612,39.2048225 -60.723465,39.2063141 -60.7458267,39.2081146 -60.7681465,39.2102051 -60.7904205,39.2125969 -60.8126335,39.2152786 -60.8347893,39.2182655 -60.8568726,39.2215385 -60.8788834,39.2251129 -60.9008102,39.2289772 -60.9226532,39.2331314 -60.9444008,39.2375793 -60.9660454,39.2423172 -60.987587,39.2473373 -61.0090141,39.2526474 -61.0303154,39.2582397 -61.0514984,39.2641182 -61.0725479,39.2702751 -61.0934563,39.2767181 -61.1142273,39.2834358 -61.1348381,39.2904243 -61.1552963,39.2976952 -61.1755943,39.305233 -61.1957245,39.3130379 -61.2156754,39.3211136 -61.2354469,39.3294487 -61.2550354,39.3380547 -61.2744293,39.3469162 -61.2936211,39.3560333 -61.3126144,39.3654022 -61.331398,39.3750305 -61.3499718,39.3849068 -61.3683167,39.3950272 -61.3864365,39.4053879 -61.4043312,39.4159889 -61.4219894,39.4268265 -61.4393959,39.4379044 -61.456562,39.4492073 -61.4734726,39.4607391 -61.4901237,39.472496 -61.5065193,39.4844704 -61.522644,39.4966583 -61.5384979,39.5090675 -61.5540695,39.5216789 -61.5693626,39.5345039 -61.5843697,39.5475197 -61.5990868,39.5607452 -61.6135063,39.5741577 -61.6276245,39.5877609 -61.6414337,39.6015511 -61.6549454,39.6155243 -61.6681328,39.6296768 -61.6810074,39.644001 -61.6935616,39.6584892 -61.7057877,39.6731567 -61.7176933,39.6879692 -61.7292557,39.7029533 -61.7404861,39.7180748 -61.7513809,39.7333527 -61.7619247,39.7487679 -61.7721252,39.764328 -61.7819748,39.7800179 -61.7914658,39.7958374 -61.8006058,39.811779 -61.809391,39.8278427 -61.8178024,39.8440208 -61.8258553,39.8603058 -61.8335495,39.8766975 -61.8408623,39.8931885 -61.8478012,39.9097786 -61.8543739,39.9264526 -61.8605614,39.9432182 -61.866375,39.9600563 -61.8717957,39.9769745 -61.8768425,39.9939613 -61.8815041,40.011013 -61.8857765,40.0281258 -61.8896637,40.0452919 -61.8931541,40.0625038 -61.8962631,40.0797615 -61.8989754,40.0970573 -61.9012909,40.1143913 -61.9032097,40.131752 -61.9047394,40.1491356 -61.9058647,40.1665306 -61.9066048,40.1839409 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008 -60.6000023,40.2000008</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>
+</Folder></Document></kml>
+
