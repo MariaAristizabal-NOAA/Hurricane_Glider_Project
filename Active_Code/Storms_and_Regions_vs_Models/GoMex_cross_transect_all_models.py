@@ -51,7 +51,7 @@ import xarray as xr
 import netCDF4
 from datetime import datetime, timedelta
 import cmocean
-import matplotlib.dates as mdates 
+import matplotlib.dates as mdates
 import os
 import os.path
 
@@ -75,7 +75,7 @@ te = datetime.today() + timedelta(1)
 tend = datetime(te.year,te.month,te.day)
 
 #ti = datetime.today() - timedelta(1)
-ti = datetime.today() 
+ti = datetime.today()
 tini = datetime(ti.year,ti.month,ti.day)
 '''
 
@@ -121,7 +121,7 @@ Y = b + m*X
 target_lonGOFS = np.empty((len(X),))
 target_lonGOFS[:] = np.nan
 for i,ii in enumerate(X):
-    if ii < 0: 
+    if ii < 0:
         target_lonGOFS[i] = 360 + ii
     else:
         target_lonGOFS[i] = ii
@@ -151,7 +151,7 @@ latGOFS = np.asarray(GOFS['lat'][:])
 lonGOFS = np.asarray(GOFS['lon'][:])
 depthGOFS = np.asarray(GOFS['depth'][:])
 ttGOFS= GOFS['time']
-tGOFS = netCDF4.num2date(ttGOFS[:],ttGOFS.units) 
+tGOFS = netCDF4.num2date(ttGOFS[:],ttGOFS.units)
 
 #tini = datetime.datetime.strptime(date_ini,'%Y-%m-%dT%H:%M:%SZ')
 #tend = datetime.datetime.strptime(date_end,'%Y-%m-%dT%H:%M:%SZ')
@@ -159,7 +159,7 @@ tGOFS = netCDF4.num2date(ttGOFS[:],ttGOFS.units)
 oktimeGOFS = np.where(np.logical_and(tGOFS >= tini, tGOFS <= tend))
 timeGOFS = tGOFS[oktimeGOFS]
 
-# interpolating transect X and Y to lat and lon 
+# interpolating transect X and Y to lat and lon
 oklonGOFS = np.round(np.interp(target_lonGOFS,lonGOFS,np.arange(0,len(lonGOFS)))).astype(int)
 oklatGOFS = np.round(np.interp(target_latGOFS,latGOFS,np.arange(0,len(latGOFS)))).astype(int)
 
@@ -192,9 +192,9 @@ for t in np.arange(len(nc_files_RTOFS)):
 timeRTOFS = np.asarray([mdates.num2date(mdates.date2num(tRTOFS[t])) \
          for t in np.arange(len(nc_files_RTOFS))])
 
-# interpolating transect X and Y to lat and lon 
+# interpolating transect X and Y to lat and lon
 oklonRTOFS = np.round(np.interp(target_lonRTOFS,lonRTOFS[0,:],np.arange(0,len(lonRTOFS[0,:])))).astype(int)
-oklatRTOFS = np.round(np.interp(target_latRTOFS,latRTOFS[:,0],np.arange(0,len(latRTOFS[:,0])))).astype(int)    
+oklatRTOFS = np.round(np.interp(target_latRTOFS,latRTOFS[:,0],np.arange(0,len(latRTOFS[:,0])))).astype(int)
 
 oktimeRTOFS = np.where(mdates.date2num(timeRTOFS) == mdates.date2num(tini))[0]
 
@@ -206,10 +206,10 @@ lat_RTOFS = latRTOFS[oklatRTOFS,0]
 sst_RTOFS = np.asarray(ncRTOFS.variables['temperature'][0,0,oklatRTOFS,oklonRTOFS])
 sss_RTOFS = np.asarray(ncRTOFS.variables['salinity'][0,0,oklatRTOFS,oklonRTOFS])
 #su_RTOFS = np.asarray(ncRTOFS.variables['u'][0,0,oklatRTOFS,oklonRTOFS])
-#sv_RTOFS = np.asarray(ncRTOFS.variables['v'][0,0,oklatRTOFS,oklonRTOFS]) 
+#sv_RTOFS = np.asarray(ncRTOFS.variables['v'][0,0,oklatRTOFS,oklonRTOFS])
 
 #%% Downloading and reading Copernicus grid
-    
+
 COP_grid = xr.open_dataset(ncCOP_global)
 
 latCOP_glob = np.asarray(COP_grid.latitude[:])
@@ -217,7 +217,7 @@ lonCOP_glob = np.asarray(COP_grid.longitude[:])
 
 #%%
 
-fig, ax = plt.subplots(figsize=(12, 6)) 
+fig, ax = plt.subplots(figsize=(12, 6))
 plt.contourf(bath_lonsub,bath_latsub,bath_elevsub,cmap='Blues_r')
 plt.contour(bath_lonsub,bath_latsub,bath_elevsub,levels=[0],colors='k')
 plt.contourf(bath_lonsub,bath_latsub,bath_elevsub,levels=[0,10000],colors='papayawhip',alpha=0.5)
@@ -230,14 +230,14 @@ ax.legend(fontsize=14)
 plt.title('Transect',fontsize=20)
 
 file = folder + 'GoMex_passage_transect'
-plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1) 
+plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)
 
-#%%  Figure GOFS 3.1 
+#%%  Figure GOFS 3.1
 
-min_valt = 6  
+min_valt = 6
 max_valt = 31
 
-min_vals = 33 
+min_vals = 33
 max_vals = 37.1
 
 target_tempGOFS = np.empty((len(depthGOFS),len(target_lonGOFS)))
@@ -252,13 +252,13 @@ for t,tind in enumerate(oktimeGOFS[0]):
         print(len(oklonGOFS),pos)
         target_tempGOFS[:,pos] = GOFS.variables['water_temp'][tind,:,oklatGOFS[pos],oklonGOFS[pos]]
         target_saltGOFS[:,pos] = GOFS.variables['salinity'][tind,:,oklatGOFS[pos],oklonGOFS[pos]]
-    
+
     #fig, ax = plt.subplots(figsize=(9, 3))
     fig, ax = plt.subplots()
     kw = dict(levels = np.arange(min_valt,max_valt))
-    
+
     cs = plt.contourf(dist,-depthGOFS,target_tempGOFS,cmap=cmocean.cm.thermal,**kw)
-    cs = fig.colorbar(cs, orientation='vertical') 
+    cs = fig.colorbar(cs, orientation='vertical')
     cs.ax.set_ylabel('Temperature ($^oC$)',size=14)
     plt.contour(dist,-depthGOFS,target_tempGOFS,[26],colors='k')
     plt.title('GOFS Transect on ' + tGOFS[tind].strftime("%Y-%m-%d %H"),size=16)
@@ -266,29 +266,29 @@ for t,tind in enumerate(oktimeGOFS[0]):
     #ax.set_xlim(0,200)
     ax.set_ylabel('Depth (m)',fontsize=14)
     ax.set_xlabel('Along Transect Distance (km)',fontsize=14)
-    
+
     file = folder + 'GoMex_passage_transect_temp_GOFS'+ \
                         tGOFS[tind].strftime("%Y-%m-%d-%H")
-    plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1) 
-    
+    plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)
+
     #fig, ax = plt.subplots(figsize=(9, 3))
     fig, ax = plt.subplots()
-    kw = dict(levels = np.arange(min_vals,max_vals,0.5)) 
+    kw = dict(levels = np.arange(min_vals,max_vals,0.5))
     cs = plt.contourf(dist,-depthGOFS,target_saltGOFS,cmap=cmocean.cm.haline,**kw)
-    cs = fig.colorbar(cs, orientation='vertical') 
+    cs = fig.colorbar(cs, orientation='vertical')
     cs.ax.set_ylabel('Salinity',size=14)
     plt.title('GOFS Transect on ' + tGOFS[tind].strftime("%Y-%m-%d %H"),size=16)
     ax.set_ylim(-300,0)
     #ax.set_xlim(0,200)
     ax.set_ylabel('Depth (m)',fontsize=14)
     ax.set_xlabel('Along Transect Distance (km)',fontsize=14)
-    
+
     file = folder + 'GoMex_passage_transect_salt_GOFS'+ \
                         tGOFS[tind].strftime("%Y-%m-%d-%H")
-    plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1) 
-     
-#%% Figures RTOFS  
-    
+    plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)
+
+#%% Figures RTOFS
+
 target_tempRTOFS = np.empty((len(depthRTOFS),len(target_lonRTOFS)))
 target_tempRTOFS[:] = np.nan
 target_saltRTOFS = np.empty((len(depthRTOFS),len(target_lonRTOFS)))
@@ -298,16 +298,17 @@ print('Getting glider transect from RTOFS')
 for tind in oktimeRTOFS:
     for pos in range(len(oklonRTOFS)):
         print(len(oklonRTOFS),pos)
-        nc_file = nc_files_RTOFS[tind]
-        RTOFS = xr.open_dataset(nc_file)
+        RTOFS = xr.open_dataset(folder_RTOFS + fol + '/' + nc_files_RTOFS[tind])
+        #nc_file = nc_files_RTOFS[tind]
+        #RTOFS = xr.open_dataset(ncRTOFS)
         target_tempRTOFS[:,pos] = RTOFS.variables['temperature'][0,:,oklatRTOFS[pos],oklonRTOFS[pos]]
         target_saltRTOFS[:,pos] = RTOFS.variables['salinity'][0,:,oklatRTOFS[pos],oklonRTOFS[pos]]
-    
+
     fig, ax = plt.subplots()
     kw = dict(levels = np.arange(min_valt,max_valt))
-    
+
     cs = plt.contourf(dist,-depthRTOFS,target_tempRTOFS,cmap=cmocean.cm.thermal,**kw)
-    cs = fig.colorbar(cs, orientation='vertical') 
+    cs = fig.colorbar(cs, orientation='vertical')
     cs.ax.set_ylabel('Temperature ($^oC$)',size=14)
     plt.contour(dist,-depthRTOFS,target_tempRTOFS,[26],colors='k')
     plt.title('RTOFS Transect on ' + timeRTOFS[tind].strftime("%Y-%m-%d %H"),size=16)
@@ -315,28 +316,28 @@ for tind in oktimeRTOFS:
     #ax.set_xlim(0,200)
     ax.set_ylabel('Depth (m)',fontsize=14)
     ax.set_xlabel('Along Transect Distance (km)',fontsize=14)
-    
+
     file = folder + 'GoMex_passage_transect_temp_RTOFS'+ \
                         str(tRTOFS[tind])[0:13]
-    plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1) 
-    
+    plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)
+
     fig, ax = plt.subplots()
-    kw = dict(levels = np.arange(min_vals,max_vals,0.5)) 
+    kw = dict(levels = np.arange(min_vals,max_vals,0.5))
     cs = plt.contourf(dist,-depthRTOFS,target_saltRTOFS,cmap=cmocean.cm.haline,**kw)
-    cs = fig.colorbar(cs, orientation='vertical') 
+    cs = fig.colorbar(cs, orientation='vertical')
     cs.ax.set_ylabel('Salinity',size=14)
     plt.title('RTOFS Transect on ' + timeRTOFS[tind].strftime("%Y-%m-%d %H"),size=16)
     ax.set_ylim(-300,0)
     #ax.set_xlim(0,200)
     ax.set_ylabel('Depth (m)',fontsize=14)
     ax.set_xlabel('Along Transect Distance (km)',fontsize=14)
-    
+
     file = folder + 'GoMex_passage_transect_salt_RTOFS'+ \
                         str(tRTOFS[tind])[0:13]
-    plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1) 
-    
+    plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)
+
 #%% Downloading and reading Copernicus output
-    
+
 motuc = 'python -m motuclient --motu ' + url_cmems + \
         ' --service-id ' + service_id + \
         ' --product-id ' + product_id + \
@@ -344,8 +345,8 @@ motuc = 'python -m motuclient --motu ' + url_cmems + \
         ' --longitude-max ' + str(np.max(X)+2/12) + \
         ' --latitude-min ' + str(np.min(Y)-2/12) + \
         ' --latitude-max ' + str(np.max(Y)+2/12) + \
-        ' --date-min ' + str(tini-timedelta(0.5)) + \
-        ' --date-max ' + str(tend+timedelta(0.5)) + \
+        ' --date-min ' + str(tini-timedelta(0.5)) + '"' +\
+        ' --date-max ' + str(tend+timedelta(0.5)) + '"' +\
         ' --depth-min ' + depth_min + \
         ' --depth-max ' + str(1000) + \
         ' --variable ' + 'thetao' + ' ' + \
@@ -371,10 +372,10 @@ timeCOP = tCOP[oktimeCOP]
 
 #%%
 
-# interpolating transect X and Y to lat and lon 
+# interpolating transect X and Y to lat and lon
 oklonCOP = np.round(np.interp(target_lonCOP,lonCOP,np.arange(0,len(lonCOP)))).astype(int)
-oklatCOP = np.round(np.interp(target_latCOP,latCOP,np.arange(0,len(latCOP)))).astype(int) 
-    
+oklatCOP = np.round(np.interp(target_latCOP,latCOP,np.arange(0,len(latCOP)))).astype(int)
+
 target_tempCOP = np.empty((len(depthCOP),len(target_lonCOP)))
 target_tempCOP[:] = np.nan
 target_saltCOP = np.empty((len(depthCOP),len(target_lonCOP)))
@@ -387,12 +388,12 @@ for tind in range(len(oktimeCOP[0])):
         print(len(oklonCOP),pos)
         target_tempCOP[:,pos] = COP.variables['thetao'][oktimeCOP[0],:,oklatCOP[pos],oklonCOP[pos]]
         target_saltCOP[:,pos] = COP.variables['so'][oktimeCOP[0],:,oklatCOP[pos],oklonCOP[pos]]
-    
+
     fig, ax = plt.subplots()
     kw = dict(levels = np.arange(min_valt,max_valt))
-    
+
     cs = plt.contourf(dist,-depthCOP,target_tempCOP,cmap=cmocean.cm.thermal,**kw)
-    cs = fig.colorbar(cs, orientation='vertical') 
+    cs = fig.colorbar(cs, orientation='vertical')
     cs.ax.set_ylabel('Temperature ($^oC$)',size=14)
     plt.contour(dist,-depthCOP,target_tempCOP,[26],colors='k')
     plt.title('Copernicus Transect on ' + timeCOP[tind].strftime("%Y-%m-%d %H"),size=16)
@@ -400,22 +401,22 @@ for tind in range(len(oktimeCOP[0])):
     #ax.set_xlim(0,200)
     ax.set_ylabel('Depth (m)',fontsize=14)
     ax.set_xlabel('Along Transect Distance (km)',fontsize=14)
-    
+
     file = folder + 'GoMex_passage_transect_temp_COP'+ \
                         timeCOP[tind].strftime("%Y-%m-%d-%H")
-    plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1) 
-    
+    plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)
+
     fig, ax = plt.subplots()
-    kw = dict(levels = np.arange(min_vals,max_vals,0.5)) 
+    kw = dict(levels = np.arange(min_vals,max_vals,0.5))
     cs = plt.contourf(dist,-depthCOP,target_saltCOP,cmap=cmocean.cm.haline,**kw)
-    cs = fig.colorbar(cs, orientation='vertical') 
+    cs = fig.colorbar(cs, orientation='vertical')
     cs.ax.set_ylabel('Salinity',size=14)
     plt.title('Copernicus Transect on ' + timeCOP[tind].strftime("%Y-%m-%d %H"),size=16)
     ax.set_ylim(-300,0)
     #ax.set_xlim(0,200)
     ax.set_ylabel('Depth (m)',fontsize=14)
     ax.set_xlabel('Along Transect Distance (km)',fontsize=14)
-    
+
     file = folder + 'GoMex_passage_transect_salt_COP'+ \
                         timeCOP[tind].strftime("%Y-%m-%d-%H")
-    plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1) 
+    plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)

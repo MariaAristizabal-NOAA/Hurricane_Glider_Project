@@ -47,7 +47,7 @@ folder_fig = '/www/web/rucool/aristizabal/Figures/'
 from matplotlib import pyplot as plt
 import numpy as np
 import xarray as xr
-import netCDF4 
+import netCDF4
 from datetime import datetime, timedelta
 import cmocean
 #from netCDF4 import Dataset
@@ -62,7 +62,7 @@ plt.rc('xtick',labelsize=14)
 plt.rc('ytick',labelsize=14)
 plt.rc('legend',fontsize=14)
 
-#%% Look for Argo datasets 
+#%% Look for Argo datasets
 
 #Time window
 tini = datetime(2020,7,23)
@@ -124,7 +124,7 @@ e.dataset_id = dataset_type
 e.constraints=constraints
 e.variables=variables
 
-print(e.get_download_url())
+#print(e.get_download_url())
 
 df = e.to_pandas(
     parse_dates=True,
@@ -154,7 +154,7 @@ depth_GOFS = np.asarray(GOFS_ts['depth'][:])
 lon_limG = np.empty((len(lon_lim),))
 lon_limG[:] = np.nan
 for i in range(len(lon_lim)):
-    if lon_lim[i] < 0: 
+    if lon_lim[i] < 0:
         lon_limG[i] = 360 + lon_lim[i]
     else:
         lon_limG[i] = lon_lim[i]
@@ -166,7 +166,7 @@ oklat_GOFS = np.where(np.logical_and(lt_GOFS >= lat_limG[0],lt_GOFS <= lat_lim[1
 lon_GOFS = ln_GOFS[oklon_GOFS]
 lat_GOFS = lt_GOFS[oklat_GOFS]
 
-tini =  datetime.strptime(ti,'%Y/%m/%d/%H')   
+tini =  datetime.strptime(ti,'%Y/%m/%d/%H')
 ttGOFS = np.asarray([datetime(t_GOFS[i].year,t_GOFS[i].month,t_GOFS[i].day,t_GOFS[i].hour) for i in np.arange(len(t_GOFS))])
 tstamp_GOFS = [mdates.date2num(ttGOFS[i]) for i in np.arange(len(ttGOFS))]
 oktime_GOFS = np.unique(np.round(np.interp(mdates.date2num(tini),tstamp_GOFS,np.arange(len(tstamp_GOFS)))).astype(int))
@@ -201,9 +201,9 @@ oklonbath = np.logical_and(bath_lon >= lon_lim[0],bath_lon <= lon_lim[-1])
 bath_latsub = bath_lat[oklatbath]
 bath_lonsub = bath_lon[oklonbath]
 bath_elevs = bath_elev[oklatbath,:]
-bath_elevsub = bath_elevs[:,oklonbath]  
+bath_elevsub = bath_elevs[:,oklonbath]
 
-#%% 
+#%%
 
 tini = datetime.strptime(ti,"%Y/%m/%d/%H")
 
@@ -245,7 +245,7 @@ tRTOFS = np.asarray([mdates.num2date(mdates.date2num(tRTOFS[t])) \
 oktt_RTOFS = np.where(mdates.date2num(tRTOFS) >= mdates.date2num(tini))[0][0]
 oklat_RTOFS = np.where(np.logical_and(latRTOFS[:,0] >= lat_lim[0],latRTOFS[:,0] <= lat_lim[1]))[0]
 oklon_RTOFS = np.where(np.logical_and(lonRTOFS[0,:] >= lon_lim[0],lonRTOFS[0,:] <= lon_lim[1]))[0]
-    
+
 nc_file = folder_RTOFS + fol + '/' + nc_files_RTOFS[oktt_RTOFS]
 ncRTOFS = xr.open_dataset(nc_file)
 time_RTOFS = tRTOFS[oktt_RTOFS]
@@ -267,16 +267,16 @@ latRTOFS_DA = np.asarray(ncRTOFS_DA.Latitude[:])
 
 for file in ncfiles_RTOFS_DA:
     print(file)
-    ncRTOFS_DA = xr.open_dataset(file)    
+    ncRTOFS_DA = xr.open_dataset(file)
     timeRTOFS_DA = np.asarray(ncRTOFS_DA.MT[:])
-    
+
 tRTOFS_DA = np.asarray([mdates.num2date(mdates.date2num(timeRTOFS_DA[t])) \
           for t in np.arange(len(ncfiles_RTOFS_DA))])
 
 oktt_RTOFS_DA = np.where(mdates.date2num(tRTOFS_DA) >= mdates.date2num(tini))[0][0]
 oklat_RTOFS_DA = np.where(np.logical_and(latRTOFS_DA[:,0] >= lat_lim[0],latRTOFS_DA[:,0] <= lat_lim[1]))[0]
 oklon_RTOFS_DA = np.where(np.logical_and(lonRTOFS_DA[0,:] >= lon_lim[0],lonRTOFS_DA[0,:] <= lon_lim[1]))[0]
-    
+
 nc_file = ncfiles_RTOFS_DA[oktt_RTOFS_DA]
 ncRTOFS = xr.open_dataset(nc_file)
 time_RTOFS_DA = tRTOFS_DA[oktt_RTOFS_DA]
@@ -315,7 +315,7 @@ q=plt.quiver(lon_GOFSg[::6],lat_GOFSg[::6],u_GOFS[::6,::6],v_GOFS[::6,::6],\
 plt.quiverkey(q,np.max(lon_GOFSg)-0.2,np.max(lat_GOFSg)+0.5,1,"1 m/s",\
               coordinates='data',color='k',fontproperties={'size': 14})
 
-file = folder_fig +'GOFS_SST_' + str(time_GOFS)[0:13]    
+file = folder_fig +'GOFS_SST_' + str(time_GOFS)[0:13]
 plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)
 
 #%% Figure sst RTOFS
@@ -340,7 +340,7 @@ q=plt.quiver(lon_RTOFS[::6,::6],lat_RTOFS[::6,::6],u_RTOFS[::6,::6],v_RTOFS[::6,
 plt.quiverkey(q,np.max(lon_RTOFS)-0.2,np.max(lat_RTOFS)+0.5,1,"1 m/s",\
               coordinates='data',color='k',fontproperties={'size': 14})
 
-file = folder_fig +'RTOFS_SST_'+str(time_RTOFS)[0:13]  
+file = folder_fig +'RTOFS_SST_'+str(time_RTOFS)[0:13]
 plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)
 
 #%% Figure sst RTOFS-DA
@@ -365,7 +365,7 @@ q=plt.quiver(lon_RTOFS_DA[::6,::6],lat_RTOFS_DA[::6,::6],u_RTOFS_DA[::6,::6],v_R
 plt.quiverkey(q,np.max(lon_RTOFS_DA)-0.2,np.max(lat_RTOFS_DA)+0.5,1,"1 m/s",\
               coordinates='data',color='k',fontproperties={'size': 14})
 
-file = folder_fig +'RTOFS_DA_SST_'+str(time_RTOFS_DA)[0:13]  
+file = folder_fig +'RTOFS_DA_SST_'+str(time_RTOFS_DA)[0:13]
 plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)
 
 #%% Cross section along -92 longitude GOFS
@@ -388,7 +388,7 @@ plt.xlabel('Latitude ($^o$)',fontsize=14)
 plt.title('GOFS Temperature Cross Section \n on '+str(time_GOFS)[0:13],fontsize=16)
 plt.xlim(20,30)
 
-file = folder_fig + 'GOFS_temp_cross_sect_' + str(time_GOFS)[0:13]    
+file = folder_fig + 'GOFS_temp_cross_sect_' + str(time_GOFS)[0:13]
 plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)
 
 #%% Cross section along -92 longitude RTOFS
@@ -408,7 +408,7 @@ plt.xlabel('Latitude ($^o$)',fontsize=14)
 plt.title('RTOFS Temperature Cross Section \n on '+str(time_RTOFS)[0:13],fontsize=16)
 plt.xlim(20,30)
 
-file = folder_fig + 'RTOFS_temp_cross_sect_' + str(time_RTOFS)[0:13]    
+file = folder_fig + 'RTOFS_temp_cross_sect_' + str(time_RTOFS)[0:13]
 plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)
 
 #%% Cross section along -92 longitude RTOFS-DA
@@ -429,7 +429,7 @@ plt.title('RTOFS-DA Temperature Cross Section \n on '+str(time_RTOFS_DA)[0:13],f
 plt.xlim(20,30)
 plt.ylim(-200,0)
 
-file = folder_fig + 'RTOFS_DA_temp_cross_sect_' + str(time_RTOFS_DA)[0:13]    
+file = folder_fig + 'RTOFS_DA_temp_cross_sect_' + str(time_RTOFS_DA)[0:13]
 plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)
 
 #%% Cross section along -85 longitude GOFS
@@ -452,7 +452,7 @@ plt.xlabel('Latitude ($^o$)',fontsize=14)
 plt.title('GOFS Temperature Cross Section \n on '+str(time_GOFS)[0:13],fontsize=16)
 plt.xlim(16,30)
 
-file = folder_fig + 'GOFS_temp_cross_sect85_' + str(time_GOFS)[0:13]    
+file = folder_fig + 'GOFS_temp_cross_sect85_' + str(time_GOFS)[0:13]
 plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)
 
 #%% Cross section along -85 longitude RTOFS
@@ -472,7 +472,7 @@ plt.xlabel('Latitude ($^o$)',fontsize=14)
 plt.title('RTOFS Temperature Cross Section \n on '+str(time_RTOFS)[0:13],fontsize=16)
 plt.xlim(16,30)
 
-file = folder_fig + 'RTOFS_temp_cross_sect85_' + str(time_RTOFS)[0:13]    
+file = folder_fig + 'RTOFS_temp_cross_sect85_' + str(time_RTOFS)[0:13]
 plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)
 
 #%% Cross section along -85 longitude RTOFS-DA
@@ -493,7 +493,7 @@ plt.title('RTOFS-DA Temperature Cross Section \n on '+str(time_RTOFS_DA)[0:13],f
 plt.xlim(16,30)
 #plt.ylim(-200,0)
 
-file = folder_fig + 'RTOFS_DA_temp_cross_sect85_' + str(time_RTOFS_DA)[0:13]    
+file = folder_fig + 'RTOFS_DA_temp_cross_sect85_' + str(time_RTOFS_DA)[0:13]
 plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)
 
 #%% Cross section along -85 longitude GOFS
@@ -516,7 +516,7 @@ plt.xlabel('Latitude ($^o$)',fontsize=14)
 plt.title('GOFS Temperature Cross Section \n on '+str(time_GOFS)[0:13],fontsize=16)
 plt.xlim(16,30)
 
-file = folder_fig + 'GOFS_temp_cross_sect85_' + str(time_GOFS)[0:13]    
+file = folder_fig + 'GOFS_temp_cross_sect85_' + str(time_GOFS)[0:13]
 plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)
 
 #%% Figure argo float vs GOFS and vs RTOFS
@@ -526,7 +526,7 @@ prefix_RTOFS_DA = 'rtofs_glo_3dz_n'
 
 argo_idd = np.unique(argo_ids)
 argo_idd_eddy = [idd for idd in argo_idd if idd == 4901476]
- 
+
 for i,id in enumerate(argo_idd_eddy):
     print(id)
     okind = np.where(argo_ids == id)[0]
@@ -552,8 +552,8 @@ for i,id in enumerate(argo_idd_eddy):
         oklon_GOFS = np.where(ln_GOFS >= argo_lon[0]+360)[0][0]
         temp_GOFS = np.asarray(GOFS_ts['water_temp'][oktt_GOFS,:,oklat_GOFS,oklon_GOFS])
         salt_GOFS = np.asarray(GOFS_ts['salinity'][oktt_GOFS,:,oklat_GOFS,oklon_GOFS])
-        
-    # RTOFS 
+
+    # RTOFS
     #Time window
     year = int(argo_time[0].year)
     month = int(argo_time[0].month)
@@ -597,30 +597,30 @@ for i,id in enumerate(argo_idd_eddy):
     #time_RTOFS = tRTOFS[oktt_RTOFS]
     temp_RTOFS = np.asarray(ncRTOFS.variables['temperature'][0,:,oklat_RTOFS,oklon_RTOFS])
     salt_RTOFS = np.asarray(ncRTOFS.variables['salinity'][0,:,oklat_RTOFS,oklon_RTOFS])
-    
-    #% RTOFS-DA  
+
+    #% RTOFS-DA
     print('Retrieving coordinates from RTOFS-DA')
     ncfiles_RTOFS_DA = sorted(glob.glob(os.path.join(folder_RTOFS_DA,prefix_RTOFS_DA+'*.nc')))
-    
+
     file = ncfiles_RTOFS_DA[0]
     ncRTOFS_DA = xr.open_dataset(file)
     lonRTOFS_DA = np.asarray(ncRTOFS_DA.Longitude[:])
     latRTOFS_DA = np.asarray(ncRTOFS_DA.Latitude[:])
-    
+
     timeRTOFS_DA = []
     for file in ncfiles_RTOFS_DA:
         print(file)
-        ncRTOFS_DA = xr.open_dataset(file)    
+        ncRTOFS_DA = xr.open_dataset(file)
         timeRTOFS_DA.append(ncRTOFS_DA.MT[:].values)
     timeRTOFS_DA = np.asarray(timeRTOFS_DA)
-        
+
     tRTOFS_DA = np.asarray([mdates.num2date(mdates.date2num(timeRTOFS_DA[t])) \
               for t in np.arange(len(ncfiles_RTOFS_DA))])
-        
+
     oktt_RTOFS_DA = np.where(mdates.date2num(tRTOFS) >= mdates.date2num(argo_time[0]))[0][0]
     oklat_RTOFS_DA = np.where(latRTOFS[:,0] >= argo_lat[0])[0][0]
     oklon_RTOFS_DA = np.where(lonRTOFS[0,:]  >= argo_lon[0])[0][0]
-        
+
     nc_file = ncfiles_RTOFS_DA[oktt_RTOFS_DA]
     ncRTOFS = xr.open_dataset(nc_file)
     time_RTOFS_DA = tRTOFS_DA[oktt_RTOFS_DA]
@@ -629,7 +629,7 @@ for i,id in enumerate(argo_idd_eddy):
     salt_RTOFS_DA = np.asarray(ncRTOFS.variables['salinity'][0,:,oklat_RTOFS_DA,oklon_RTOFS_DA])
     lon_RTOFS_DA = lonRTOFS_DA[oklat_RTOFS_DA,oklon_RTOFS_DA]
     lat_RTOFS_DA = latRTOFS_DA[oklat_RTOFS_DA,oklon_RTOFS_DA]
-    
+
     # Figure temp
     plt.figure(figsize=(5,6))
     plt.plot(argo_temp,-argo_pres,'.-',linewidth=2,label='ARGO Float id '+str(id))
