@@ -24,14 +24,14 @@ max_time = '2020-11-30T00:00:00Z'
 bath_file = '/Users/aristizabal/Desktop/MARACOOS_project/Maria_scripts/nc_files/gebco_2020_n50.0_s0.0_w-100.0_e0.0.nc'
 #bath_file = '/home/aristizabal/bathymetry_files/GEBCO_2014_2D_-100.0_0.0_-10.0_70.0.nc'
 
-# Server url 
+# Server url
 server = 'https://data.ioos.us/gliders/erddap'
 
 # storm track files
 track_folder = '/Users/aristizabal/Desktop/MARACOOS_project/Maria_scripts/KMZ_files/'
 basin = 'al'
 year = '2020'
-fname = '_best_track.kmz' 
+fname = '_best_track.kmz'
 
 # Argo floats
 url_Argo = 'http://www.ifremer.fr/erddap'
@@ -47,14 +47,14 @@ import cmocean
 import glob
 import os
 #from netCDF4 import Dataset
-#import netCDF4 
+#import netCDF4
 from bs4 import BeautifulSoup
 from zipfile import ZipFile
 import cartopy
 import cartopy.feature as cfeature
 from datetime import datetime
 
-#%% Look for datasets 
+#%% Look for datasets
 
 e = ERDDAP(server = server)
 
@@ -109,12 +109,12 @@ for id in gliders:
     e.dataset_id = id
     e.constraints = constraints
     e.variables = variables
-    
+
     df = e.to_pandas(
     parse_dates=True)
-    
+
     print(id,df.index[-1])
-    
+
 #%% Reading bathymetry data
 
 ncbath = xr.open_dataset(bath_file)
@@ -128,9 +128,9 @@ oklonbath = np.logical_and(bath_lon >= lon_lim[0],bath_lon <= lon_lim[-1])
 bath_latsub = bath_lat[oklatbath]
 bath_lonsub = bath_lon[oklonbath]
 bath_elevs = bath_elev[oklatbath,:]
-bath_elevsub = bath_elevs[:,oklonbath] 
+bath_elevsub = bath_elevs[:,oklonbath]
 
-#%% Look for Argo datasets 
+#%% Look for Argo datasets
 
 e = ERDDAP(server = url_Argo)
 
@@ -157,7 +157,7 @@ dataset = search['Dataset ID'].values
 msg = 'Found {} Datasets:\n\n{}'.format
 print(msg(len(dataset), '\n'.join(dataset)))
 
-dataset_type = dataset[0]
+dataset_type = 'ArgoFloats-synthetic-BGC'
 
 constraints = {
     'time>=': min_time,
@@ -166,7 +166,7 @@ constraints = {
     'latitude<=': lat_lim[1],
     'longitude>=':lon_lim[0],
     'longitude<=': lon_lim[1],
-}   
+}
 
 variables = [
  'platform_number',
@@ -201,27 +201,27 @@ argo_times = np.asarray(df['time (UTC)'])
 argo_lons = np.asarray(df['longitude (degrees_east)'])
 argo_lats = np.asarray(df['latitude (degrees_north)'])
 #argo_temps = np.asarray(df['temp (degree_Celsius)'])
-#argo_salts = np.asarray(df['psal (PSU)']) 
+#argo_salts = np.asarray(df['psal (PSU)'])
 
 Number_argo_profiles = np.max([np.unique(argo_lons).shape,\
                                np.unique(argo_lats).shape,\
-                               np.unique(argo_times).shape]) 
+                               np.unique(argo_times).shape])
 
 #%%
 lev = np.arange(-9000,9100,100)
 #fig, ax = plt.subplots(figsize=(10, 5))
 fig, ax = plt.subplots(figsize=(10, 5),subplot_kw=dict(projection=cartopy.crs.PlateCarree()))
-plt.contourf(bath_lonsub,bath_latsub,bath_elevsub,lev,cmap=cmocean.cm.topo) 
-plt.contour(bath_lonsub,bath_latsub,bath_elevsub,[0],colors='k')   
+plt.contourf(bath_lonsub,bath_latsub,bath_elevsub,lev,cmap=cmocean.cm.topo)
+plt.contour(bath_lonsub,bath_latsub,bath_elevsub,[0],colors='k')
 plt.yticks([])
-plt.xticks([]) 
+plt.xticks([])
 
 coast = cfeature.NaturalEarthFeature('physical', 'coastline', '10m')
 ax.add_feature(coast, edgecolor='black', facecolor='none')
-ax.add_feature(cfeature.BORDERS)  # adds country borders  
+ax.add_feature(cfeature.BORDERS)  # adds country borders
 
 argo_idd = np.unique(argo_ids)
-  
+
 
 for i,id in enumerate(argo_idd):
     print(id)
@@ -229,10 +229,10 @@ for i,id in enumerate(argo_idd):
     argo_time = np.asarray([datetime.strptime(t,'%Y-%m-%dT%H:%M:%SZ') for t in argo_times[okind]])
     argo_lon = argo_lons[okind]
     argo_lat = argo_lats[okind]
-        
-    ax.plot(argo_lon,argo_lat,'ok',markersize = 4,markeredgecolor='g') 
 
-for id in gliders:        
+    ax.plot(argo_lon,argo_lat,'ok',markersize = 4,markeredgecolor='g')
+
+for id in gliders:
     e.dataset_id = id
     e.constraints = constraints
     e.variables = variables
@@ -245,9 +245,9 @@ for id in gliders:
                       np.mean(df['latitude (degrees_north)']) > 40):
         print(id)
         ax.plot(df['longitude (degrees_east)'],\
-                df['latitude (degrees_north)'],'.',color='r',markersize=1)   
+                df['latitude (degrees_north)'],'.',color='r',markersize=1)
 
-plt.axis('scaled') 
+plt.axis('scaled')
 plt.axis([-100,-10,0,50])
 #plt.axis([-100,-10,0,60])
 plt.savefig("/Users/aristizabal/Desktop/MARACOOS_project/Maria_scripts/Figures/Model_glider_comp/map_gliders_hurric_season_2020_Argos.png",\

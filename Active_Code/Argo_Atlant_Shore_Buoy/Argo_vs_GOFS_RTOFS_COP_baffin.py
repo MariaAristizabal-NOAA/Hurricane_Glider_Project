@@ -28,10 +28,11 @@ depth_min = '0.493'
 out_dir = '/home/aristizabal/crontab_jobs'
 
 # Bathymetry file
-#bath_file = '/Users/aristizabal/Desktop/MARACOOS_project/Maria_scripts/nc_files/GEBCO_2014_2D_-100.0_0.0_-60.0_45.0.nc'    
+#bath_file = '/Users/aristizabal/Desktop/MARACOOS_project/Maria_scripts/nc_files/GEBCO_2014_2D_-100.0_0.0_-60.0_45.0.nc'
 bath_file = '/home/aristizabal/bathymetry_files/GEBCO_2014_2D_-100.0_0.0_-10.0_50.0.nc'
 
 url_GTS = 'http://osmc.noaa.gov/erddap'
+#url_Argo = 'http://www.ifremer.fr/erddap'
 
 # GoMex
 lon_lim = [-98,-80]
@@ -107,9 +108,10 @@ except Exception as err:
     depth_GOFS = np.nan
     t_GOFS = tini
 
-#%% Look for Navy floats datasets 
+#%% Look for Navy floats datasets
 
 e = ERDDAP(server = url_GTS)
+#e = ERDDAP(server = url_Argo)
 
 # Grab every dataset available
 datasets = pd.read_csv(e.get_search_url(response='csv', search_for='all'))
@@ -117,14 +119,13 @@ datasets = pd.read_csv(e.get_search_url(response='csv', search_for='all'))
 print('Found '+ str(len(datasets)) + ' datasets')
 print(datasets['Dataset ID'])
 
-#dataset_id = datasets['Dataset ID'][14]
-dataset_id = datasets['Dataset ID'][18]
+dataset_id = 'OSMCV4_DUO_PROFILES'
 
 variables = [
- 'platform_code',  
+ 'platform_code',
  'time',
  'longitude',
- 'latitude', 
+ 'latitude',
  'depth',
  'ztmp',
  'zsal',
@@ -150,13 +151,13 @@ for idp in platf_code_navy:
     e.constraints = constraints
 
     try:
-        print(e.get_download_url())
-    
+        #print(e.get_download_url())
+
         df = e.to_pandas(
             parse_dates=True,
             skiprows=(1,)  # units information can be dropped.
         ).dropna()
-    
+
         float_id = np.unique(np.asarray(df['platform_code']))[0]
         float_times = np.asarray(df['time (UTC)'])
         float_lons = np.asarray(df['longitude (degrees_east)'])
@@ -164,10 +165,10 @@ for idp in platf_code_navy:
         float_depths = np.asarray(df['depth (m)'])
         float_temps = np.asarray(df['ztmp (Deg C)'])
         float_salts = np.asarray(df['zsal'])
-    
+
         #%%
-        
-        tunique = np.unique(float_times)   
+
+        tunique = np.unique(float_times)
         for tu in tunique:
             indt = [ind for ind,t in enumerate(float_times) if t == tu]
             float_time = float_times[indt]
@@ -177,7 +178,7 @@ for idp in platf_code_navy:
             float_depth = float_depths[indt][indd]
             float_temp = float_temps[indt][indd]
             float_salt = float_salts[indt][indd]
-            
+
             # GOFS
             print('Retrieving variables from GOFS')
             if isinstance(GOFS_ts,float):
@@ -189,20 +190,20 @@ for idp in platf_code_navy:
                 oklon_GOFS = np.where(ln_GOFS >= float_lon[0]+360)[0][0]
                 temp_GOFS = np.asarray(GOFS_ts['water_temp'][oktt_GOFS,:,oklat_GOFS,oklon_GOFS])
                 salt_GOFS = np.asarray(GOFS_ts['salinity'][oktt_GOFS,:,oklat_GOFS,oklon_GOFS])
-               
-            # RTOFS 
+
+            # RTOFS
             #Time window
-            '''    
+            '''
             year = int(float_time[0].year)
             month = int(float_time[0].month)
             day = int(float_time[0].day)
             tini = datetime(year, month, day)
             tend = tini + timedelta(days=1)
             '''
-    
+
             # Read RTOFS grid and time
             print('Retrieving coordinates from RTOFS')
-    
+
             if tini.month < 10:
                 if tini.day < 10:
                     fol = 'rtofs.' + str(tini.year) + '0' + str(tini.month) + '0' + str(tini.day)
@@ -213,31 +214,31 @@ for idp in platf_code_navy:
                     fol = 'rtofs.' + str(tini.year) + str(tini.month) + '0' + str(tini.day)
                 else:
                     fol = 'rtofs.' + str(tini.year) + str(tini.month) + str(tini.day)
-    
+
             ncRTOFS = xr.open_dataset(folder_RTOFS + fol + '/' + nc_files_RTOFS[0])
             latRTOFS = np.asarray(ncRTOFS.Latitude[:])
             lonRTOFS = np.asarray(ncRTOFS.Longitude[:])
-            depth_RTOFS = np.asarray(ncRTOFS.Depth[:])    
-                
+            depth_RTOFS = np.asarray(ncRTOFS.Depth[:])
+
             tRTOFS = []
             for t in np.arange(len(nc_files_RTOFS)):
                 ncRTOFS = xr.open_dataset(folder_RTOFS + fol + '/' + nc_files_RTOFS[t])
                 tRTOFS.append(np.asarray(ncRTOFS.MT[:])[0])
-    
+
             tRTOFS = np.asarray([mdates.num2date(mdates.date2num(tRTOFS[t])) \
                       for t in np.arange(len(nc_files_RTOFS))])
-    
+
             oktt_RTOFS = np.where(mdates.date2num(tRTOFS) >= \
-                    mdates.date2num(datetime.strptime(float_time[0],'%Y-%m-%dT%H:%M:%SZ')))[0][0] 
+                    mdates.date2num(datetime.strptime(float_time[0],'%Y-%m-%dT%H:%M:%SZ')))[0][0]
             oklat_RTOFS = np.where(latRTOFS[:,0] >= float_lat[0])[0][0]
             oklon_RTOFS = np.where(lonRTOFS[0,:]  >= float_lon[0])[0][0]
-    
+
             nc_file = folder_RTOFS + fol + '/' + nc_files_RTOFS[oktt_RTOFS]
             ncRTOFS = xr.open_dataset(nc_file)
             #time_RTOFS = tRTOFS[oktt_RTOFS]
             temp_RTOFS = np.asarray(ncRTOFS.variables['temperature'][0,:,oklat_RTOFS,oklon_RTOFS])
             salt_RTOFS = np.asarray(ncRTOFS.variables['salinity'][0,:,oklat_RTOFS,oklon_RTOFS])
-             
+
             # Downloading and reading Copernicus output
             motuc = 'python -m motuclient --motu ' + url_cmems + \
             ' --service-id ' + service_id + \
@@ -246,8 +247,8 @@ for idp in platf_code_navy:
             ' --longitude-max ' + str(float_lon[0]+2/12) + \
             ' --latitude-min ' + str(float_lat[0]-2/12) + \
             ' --latitude-max ' + str(float_lat[0]+2/12) + \
-            ' --date-min ' + str(tini-timedelta(0.5)) + \
-            ' --date-max ' + str(tend+timedelta(0.5)) + \
+            ' --date-min ' + str(tini-timedelta(0.5)) + '"' +\
+            ' --date-max ' + str(tend+timedelta(0.5)) + '"' +\
             ' --depth-min ' + depth_min + \
             ' --depth-max ' + str(np.nanmax(float_depth)+1000) + \
             ' --variable ' + 'thetao' + ' ' + \
@@ -256,16 +257,16 @@ for idp in platf_code_navy:
             ' --out-name ' + str(idp) + '.nc' + ' ' + \
             ' --user ' + 'maristizabalvar' + ' ' + \
             ' --pwd ' +  'MariaCMEMS2018'
-    
+
             os.system(motuc)
             # Check if file was downloaded
-    
+
             COP_file = out_dir + '/' + str(idp) + '.nc'
-    
+
             resp = os.system('ls ' + out_dir +'/' + str(idp) + '.nc')
             if resp == 0:
                 COP = xr.open_dataset(COP_file)
-    
+
                 latCOP = np.asarray(COP.latitude[:])
                 lonCOP = np.asarray(COP.longitude[:])
                 depth_COP = np.asarray(COP.depth[:])
@@ -277,14 +278,14 @@ for idp in platf_code_navy:
                 lonCOP[:] = np.nan
                 tCOP = np.empty(1)
                 tCOP[:] = np.nan
-    
+
             oktimeCOP = np.where(mdates.date2num(tCOP) >= mdates.date2num(tini))[0][0]
             oklonCOP = np.where(lonCOP >= float_lon[0])[0][0]
             oklatCOP = np.where(latCOP >= float_lat[0])[0][0]
-    
+
             temp_COP = np.asarray(COP.variables['thetao'][oktimeCOP,:,oklatCOP,oklonCOP])
             salt_COP = np.asarray(COP.variables['so'][oktimeCOP,:,oklatCOP,oklonCOP])
-            
+
             # Figure temp
             plt.figure(figsize=(5,6))
             plt.plot(float_temp,-float_depth,'.-',linewidth=2,label='Navy Float id '+str(idp))
@@ -300,10 +301,10 @@ for idp in platf_code_navy:
             plt.ylabel('Depth (m)',fontsize=14)
             plt.xlabel('$^oC$',fontsize=14)
             plt.legend(loc='lower right',fontsize=14)
-    
+
             file = folder_fig + 'Navy_floats_vs_GOFS_RTOFS_COP_temp_' + str(idp)
             plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)
-            
+
             # Figure salinity
             plt.figure(figsize=(5,6))
             plt.plot(float_salt,-float_depth,'.-',linewidth=2,label='Navy Float id '+str(idp))
@@ -318,10 +319,9 @@ for idp in platf_code_navy:
                           fontsize=16)
             plt.ylabel('Depth (m)',fontsize=14)
             plt.legend(loc='lower right',fontsize=14)
-    
+
             file = folder_fig + 'Navy_floats_vs_GOFS_RTOFS_COP_salt_' + str(idp)
             plt.savefig(file,bbox_inches = 'tight',pad_inches = 0.1)
-        
+
     except Exception as err:
         print(err)
-        
